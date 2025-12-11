@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - WaVault</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            /* Darker text for contrast */
+            background-color: #ffffff;
+            /* Explicit white background */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        .highlight {
+            background: #f0f9ff;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> December 11, 2025</p>
+    <p><strong>Version:</strong> 1.0</p>
+
+    <div class="highlight">
+        <p>At <strong>WaVault</strong>, we adhere to a strict <strong>"Zero-Knowledge" architecture</strong>. This means
+            we have designed our software so that we technically cannot access your data, even if we are compelled to do
+            so.</p>
+    </div>
+
+    <h2>1. Introduction and Scope</h2>
+    <p>WaVault ("The Extension") is a browser extension tool designed to organize locally stored data. This Privacy
+        Policy explains what data interacts with the Extension and how that data is secured.</p>
+
+    <h2>2. The "Local-First" Architecture</h2>
+    <p>Unlike traditional cloud software, WaVault operates entirely within your browser's <strong>Local Runtime
+            Environment</strong>.</p>
+    <ul>
+        <li><strong>No Cloud Uploads:</strong> Contact data extracted from WhatsApp Web is processed in your device's
+            memory (RAM) and stored in your browser's Local Storage (<code>chrome.storage.local</code>).</li>
+        <li><strong>No Backend Database:</strong> WaVault does not maintain a database of user contacts. We have no
+            "Admin Panel" to view your saved leads.</li>
+    </ul>
+
+    <h2>3. Data Collection</h2>
+    <p>We collect minimal data required for account administration:</p>
+    <ul>
+        <li><strong>Account Info:</strong> Email address and License Key (for Pro verification).</li>
+        <li><strong>Telemetry:</strong> Anonymous usage diagnostics (e.g., "Extension crashed on export") to improve
+            stability. This does not include any user-generated content.</li>
+    </ul>
+    <p><strong>We DO NOT collect:</strong> Phone numbers, chat messages, group names, or contact photos.</p>
+
+    <h2>4. Data Processing Permissions</h2>
+    <p>To function, WaVault requires specific permissions in Chrome:</p>
+    <ul>
+        <li><code>storage</code>: To save your structured data locally.</li>
+        <li><code>unlimitedStorage</code>: To support databases larger than 5MB.</li>
+        <li><code>activeTab</code>: To interact with the WhatsApp Web interface only when you initiate the extension.
+        </li>
+    </ul>
+
+    <h2>5. Third-Party Subprocessors</h2>
+    <p>We utilize the following trusted third parties for infrastructure:</p>
+    <ul>
+        <li><strong>Chrome Web Store:</strong> For secure distribution and automatic updates.</li>
+        <li><strong>Stripe (or Merchant of Record):</strong> For PCI-compliant payment processing. We never store credit
+            card numbers.</li>
+    </ul>
+
+    <h2>6. Your Rights (GDPR & CCPA)</h2>
+    <p>Since we do not store your data, "Right to Erasure" requests are handled by you simply uninstalling the
+        extension. Once uninstalled, all locally stored data is permanently deleted by the browser.</p>
+
+    <footer>
+        <p>&copy; 2025 WaVault. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
