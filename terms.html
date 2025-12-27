@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — WaVault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --surface: #FFFFFF;
+            --text-main: #1C1C1A;
+            --text-muted: #52524E;
+            --primary: #6366F1;
+            --primary-bg: rgba(99, 102, 241, 0.08);
+            --border: #E7EDEF;
+            --accent: #F59E0B;
+            --accent-bg: rgba(245, 158, 11, 0.08);
+
+            --max-width: 1100px;
+            --content-width: 680px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 249, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Layout --- */
+        .wrapper {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 4rem;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toc-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        /* --- Main Content --- */
+        main {
+            max-width: var(--content-width);
+        }
+
+        header {
+            margin-bottom: 3.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background-color: var(--primary-bg);
+            color: var(--primary);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .summary-box {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent);
+        }
+
+        .summary-box h2 {
+            font-size: 1.125rem;
+            color: var(--accent);
+            border: none;
+            margin: 0 0 0.75rem 0;
+            padding: 0;
+            font-weight: 700;
+        }
+
+        .summary-box p {
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        /* --- Typography --- */
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 4rem 0 1.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 1.0625rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        li::marker {
+            color: var(--primary);
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--text-main);
+            background: linear-gradient(120deg, var(--primary-bg) 0%, var(--primary-bg) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+            font-weight: 600;
+        }
+
+        /* --- Global Footer --- */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .site-footer p {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+                padding-top: 2rem;
+            }
+
+            aside {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media print {
+
+            nav,
+            aside,
+            .site-footer {
+                display: none;
+            }
+
+            .wrapper {
+                display: block;
+                padding: 0;
+            }
+
+            body {
+                background: white;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="icon.svg" alt="WaVault Logo" style="width: 28px; height: 28px; border-radius: 6px;">
+                WaVault
+            </a>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted)">Protocol 1.0</div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <aside>
+            <div class="toc-title">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#acceptance" class="toc-link">1. Acceptance</a></li>
+                <li><a href="#service" class="toc-link">2. Service Description</a></li>
+                <li><a href="#platforms" class="toc-link">3. Third Parties</a></li>
+                <li><a href="#data" class="toc-link">4. Data Responsibility</a></li>
+                <li><a href="#payments" class="toc-link">5. Payments</a></li>
+                <li><a href="#ip" class="toc-link">6. Intellectual Property</a></li>
+                <li><a href="#prohibited" class="toc-link">7. Prohibited Acts</a></li>
+                <li><a href="#liability" class="toc-link">8. Liability Limits</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <header>
+                <div class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    Legal Agreement
+                </div>
+                <h1>Terms of Service</h1>
+                <div class="meta">
+                    <div>Effective: December 22, 2025</div>
+                    <div>Version: 1.0.3</div>
+                </div>
+            </header>
+
+            <div class="summary-box">
+                <h2>The Summary</h2>
+                <p>WaVault is a local-only tool. We don't see your data, and we don't store it. You are solely
+                    responsible for your own data security and your compliance with third-party platform rules.</p>
+            </div>
+
+            <section id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By installing the WaVault browser extension ("The Extension") or accessing our services, you agree to
+                    be bound by these Terms of Service. This is a legally binding agreement between you and WaVault. If
+                    you do not agree, please do not use the Extension.</p>
+            </section>
+
+            <section id="service">
+                <h2>2. Description of Service</h2>
+                <p>WaVault provides a professional interface to structure and export your locally available WhatsApp Web
+                    data. The Extension operates under a <span class="highlight">Zero-Knowledge Architecture</span>,
+                    meaning all processing happens in your browser's runtime memory (RAM) and local storage. Data is
+                    stored locally using the browser's native secure keychain mechanism (AES-256 encryption at rest).
+                </p>
+            </section>
+
+            <section id="platforms">
+                <h2>3. Third-Party Platform Dependence</h2>
+                <p>WaVault is an independent project and is not affiliated with, associated with, or endorsed by
+                    WhatsApp Inc. or Meta Platforms, Inc.</p>
+                <ul>
+                    <li><strong>No Affiliation:</strong> "WhatsApp" is a registered trademark of WhatsApp Inc.</li>
+                    <li><strong>Service Continuity:</strong> Because the Extension relies on the WhatsApp Web interface,
+                        any updates made by WhatsApp to their code may disrupt or disable WaVault's functionality. We
+                        are not liable for any such disruptions.</li>
+                    <li><strong>User Compliance:</strong> You are solely responsible for ensuring that your use of the
+                        Extension complies with WhatsApp's own Terms of Service and Anti-Spam policies.</li>
+                </ul>
+            </section>
+
+            <section id="data">
+                <h2>4. Data Responsibility & Loss</h2>
+                <p>Since WaVault maintains Zero-Knowledge of your private data, we cannot offer recovery services:</p>
+                <ul>
+                    <li><strong>No Backups:</strong> We do not back up your lead lists. If you uninstall the extension
+                        or clear your device cache, all local WaVault data is permanently erased.</li>
+                    <li><strong>Integrity:</strong> You are responsible for maintaining secondary copies of your
+                        exported CSV files. WaVault is not liable for data loss, corruption, or unintended deletion.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="payments">
+                <h2>5. Subscriptions & Payments</h2>
+                <p>We provide "Pro" features under a subscription model. Payments are handled by <span
+                        class="highlight">Creem (creem.io)</span>, our Merchant of Record.</p>
+                <ul>
+                    <li><strong>Billing:</strong> Subscriptions are charged to your selected method at the start of each
+                        period.</li>
+                    <li><strong>Refunds:</strong> Due to the digital nature of the activation and the existence of a
+                        free tier for testing, refunds are generally not offered once a Pro license is activated, except
+                        as required by local law.</li>
+                    <li><strong>Termination:</strong> We reserve the right to revoke license keys if we detect
+                        fraudulent activity or technical misuse.</li>
+                </ul>
+            </section>
+
+            <section id="ip">
+                <h2>6. Intellectual Property</h2>
+                <p>All rights, title, and interest in the Extension—including the compiled WASM core, UI design system,
+                    and brand assets—are the exclusive property of WaVault. You are granted a limited, non-exclusive
+                    license to use the Extension for its intended purpose.</p>
+            </section>
+
+            <section id="prohibited">
+                <h2>7. Prohibited Acts</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Attempt to reverse-engineer, decompile, or extract the source logic of the compiled WASM core.
+                    </li>
+                    <li>Use the Extension for automated spamming, bulk harvesting, or any activity that violates
+                        third-party terms.</li>
+                    <li>Bypass or attempt to disable the licensing mechanisms.</li>
+                </ul>
+            </section>
+
+            <section id="liability">
+                <h2>8. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WAVAULT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE
+                    SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING ACCOUNT BANS,
+                    REPUTATIONAL DAMAGE, OR DATA LOSS ARISING FROM THE USE OF THE EXTENSION.</p>
+            </section>
+
+            <section style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <h3>Legal Enquiries</h3>
+                <p>Questions about these terms should be directed to <a
+                        href="mailto:houseof2studio@gmail.com">houseof2studio@gmail.com</a>.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WaVault. All rights reserved. Locally processed in your browser.</p>
+    </footer>
+</body>
+
+</html>
