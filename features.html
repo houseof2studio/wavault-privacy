@@ -277,50 +277,43 @@
 
         /* --- Support Section --- */
         .support-card {
-            background: #FFDD00;
+            background: white;
+            border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 3rem;
             text-align: center;
             margin: 6rem 0;
-            color: #000000;
-            box-shadow: 0 8px 30px rgba(255, 221, 0, 0.2);
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
         }
 
         .support-card h2 {
-            color: #000000;
             margin-top: 0;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 1.75rem;
+            color: var(--text-main);
         }
 
         .support-card p {
-            color: rgba(0, 0, 0, 0.7);
+            color: var(--text-muted);
             max-width: 500px;
-            margin: 0 auto 2rem;
-            font-weight: 500;
+            margin: 0 auto 2.5rem;
         }
 
         .bmc-btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 1rem 2rem;
-            background: #000000;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            transition: transform 0.2s, box-shadow 0.2s;
+            justify-content: center;
+            transition: all 0.2s ease;
         }
 
         .bmc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            opacity: 0.9;
         }
 
         .bmc-btn img {
-            height: 24px;
+            height: 50px;
+            border-radius: 8px;
         }
 
         /* --- Global Footer --- */
@@ -423,7 +416,8 @@
                 <h2>Lead Utility Architecture</h2>
                 <p>WaVault is engineered to bridge the gap between your browser and your professional CRM. We focus on
                     <span class="highlight">eliminating friction</span> and safeguarding your leads through local,
-                    high-speed lead extraction.</p>
+                    high-speed lead extraction.
+                </p>
             </div>
 
             <section id="messaging">
@@ -575,8 +569,7 @@
                     <p>WaVault is a community-first project. Your support helps us maintain the infrastructure and build
                         the features you love.</p>
                     <a href="https://buymeacoffee.com/HouseOf2" target="_blank" class="bmc-btn">
-                        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
-                        <span>Buy me a coffee</span>
+                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
                     </a>
                 </div>
             </section>
