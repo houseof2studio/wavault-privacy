@@ -130,6 +130,19 @@
             font-weight: 700;
         }
 
+        /* --- Featured Elements --- */
+        .feature-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
         /* --- Main Content --- */
         main {
             max-width: var(--content-width);
@@ -277,16 +290,29 @@
 
         /* --- BMC Support Card (MD3-Lite Refined) --- */
         .bmc-card {
-            background: white;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F9FAFB 100%);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 3rem;
+            border-radius: 28px;
+            padding: 3.5rem 2rem;
             text-align: center;
             margin: 6rem 0;
-            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bmc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0.6;
         }
 
         .bmc-card h2 {
@@ -390,6 +416,7 @@
                 <li><a href="#geography" class="toc-link">Global Targeting</a></li>
                 <li><a href="#selection" class="toc-link">Selection Flow</a></li>
                 <li><a href="#exports" class="toc-link">CRM Vault</a></li>
+                <li><a href="#panel" class="toc-link">Side Panel Utility</a></li>
                 <li><a href="#free" class="toc-link">Unlimited Access</a></li>
                 <li><a href="#privacy" class="toc-link">Zen Stealth</a></li>
                 <li><a href="#support" class="toc-link">Support Project</a></li>
@@ -416,7 +443,8 @@
                 <h2>Lead Utility Architecture</h2>
                 <p>WaVault is engineered to bridge the gap between your browser and your professional CRM. We focus on
                     <span class="highlight">eliminating friction</span> and safeguarding your leads through local,
-                    high-speed lead extraction.</p>
+                    high-speed lead extraction.
+                </p>
             </div>
 
             <section id="messaging">
@@ -462,6 +490,16 @@
                     The Hero Stats at the top of your dashboard track your conversion pipeline. Monitor unsaved leads
                     versus saved customers to measure your growth.
                 </div>
+
+                <h3>WhatsApp Label Sync</h3>
+                <p>For Business users, WaVault seamlessly pulls your existing WhatsApp Labels. Filter contacts by "New
+                    Customer," "Pending Payment," or your own custom tags.</p>
+                <ul>
+                    <li><strong>Direct Integration:</strong> Every label created on your mobile app or WhatsApp Web is
+                        available in the dashboard.</li>
+                    <li><strong>Single-Click Filter:</strong> Isolate entire segments of your sales funnel instantly.
+                    </li>
+                </ul>
             </section>
 
             <section id="metadata">
@@ -525,8 +563,24 @@
                 </ul>
             </section>
 
+            <section id="panel">
+                <h2>7. Side Panel Utility</h2>
+                <p>WaVault lives in the Chrome Side Panel, keeping your workflow unified and your screen clutter-free.
+                </p>
+
+                <h3>Side-by-Side Efficiency</h3>
+                <p>Perform deep research on a website while keeping your contact list open. No more toggling between
+                    tabs.</p>
+                <ul>
+                    <li><strong>Always Available:</strong> Launch WaVault from the extensions bar and it docks
+                        comfortably to the right or left.</li>
+                    <li><strong>Responsive Layout:</strong> Optimized for narrow viewports without losing data density.
+                    </li>
+                </ul>
+            </section>
+
             <section id="free">
-                <h2>7. Unlimited Zero-Cost Access</h2>
+                <h2>8. Unlimited Zero-Cost Access</h2>
                 <p>We are currently providing WaVault as a <span class="highlight">100% Free Utility</span> for all
                     professionals. Every feature listed in this guide is fully accessible without any subscription or
                     hidden fees.</p>
@@ -542,15 +596,17 @@
             </section>
 
             <section id="privacy">
-                <h2>8. Security & Stealth Protocol</h2>
+                <h2>9. Security & Stealth Protocol</h2>
                 <p>We respect your professional privacy. WaVault is designed so that your client data stays exactly
                     where it should: on your machine.</p>
 
                 <h3>Zen Mode (Stealth)</h3>
                 <p>Share your screen or record demos without leaking sensitive client information.</p>
                 <ul>
-                    <li><strong>Windows Shortcut:</strong> <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></li>
-                    <li><strong>Mac Shortcut:</strong> <kbd>Opt</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></li>
+                    <li><strong>Windows Shortcut:</strong> <kbd class="kbd">Alt</kbd> + <kbd class="kbd">Shift</kbd> +
+                        <kbd class="kbd">P</kbd></li>
+                    <li><strong>Mac Shortcut:</strong> <kbd class="kbd">Opt</kbd> + <kbd class="kbd">Shift</kbd> + <kbd
+                            class="kbd">P</kbd></li>
                     <li><strong>Automatic Masking:</strong> All names, phone numbers, and profile images are blurred in
                         real-time.</li>
                 </ul>
@@ -564,9 +620,15 @@
 
             <section id="support">
                 <div class="bmc-card">
+                    <div style="color: #FF5F5F; margin-bottom: 1.5rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                    </div>
                     <h2>Fuel the Development</h2>
-                    <p>WaVault is a community-first project. Your support helps us maintain the infrastructure and build
-                        the features you love.</p>
+                    <p>WaVault is a community-first project. Your support helps us maintain the infrastructure, cover
+                        API costs, and build the features you love.</p>
                     <a href="https://buymeacoffee.com/HouseOf2" target="_blank" class="bmc-btn">
                         <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
                     </a>
@@ -577,10 +639,10 @@
 
     <footer class="site-footer">
         <p>&copy; 2026 WaVault. All rights reserved. Locally processed in your browser.</p>
-        <div class="footer-links">
+        <div class="footer-links" style="margin-top: 2rem;">
             <a href="index.html" class="footer-link">Privacy Policy</a>
             <a href="terms.html" class="footer-link">Terms of Service</a>
-            <a href="#" class="footer-link">User Guide</a>
+            <a href="https://hitesh239.github.io/wavault-docs/" target="_blank" class="footer-link">Documentation</a>
         </div>
     </footer>
 
