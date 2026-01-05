@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The WaVault Superpowers — Feature Guide</title>
+    <title>The WaVault Superpowers : Feature Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Header --- */
+        /* --- Global Style --- */
         nav {
             position: sticky;
             top: 0;
@@ -75,7 +75,6 @@
             gap: 0.5rem;
         }
 
-        /* --- Layout --- */
         .wrapper {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -205,15 +204,10 @@
         .feature-card h3 {
             font-size: 1.25rem;
             font-weight: 800;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
-        }
-
-        .feature-card p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
         }
 
         .icon-circle {
@@ -227,13 +221,46 @@
             color: var(--primary);
         }
 
+        .step-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .step-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .step-content strong {
+            color: var(--text-main);
+        }
+
         .pro-box {
             background: #1C1C1A;
             color: white;
             padding: 2rem;
             border-radius: 24px;
             margin: 3rem 0;
-            position: relative;
         }
 
         .pro-box h4 {
@@ -270,7 +297,6 @@
             font-size: 0.85rem;
         }
 
-        /* Animation class */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -313,179 +339,250 @@
         <aside>
             <div class="toc-title">Catalogue</div>
             <ul class="toc-list">
-                <li><a href="#interaction" class="toc-link">1. Interaction Logic</a></li>
-                <li><a href="#discovery" class="toc-link">2. Discovery Engine</a></li>
-                <li><a href="#organization" class="toc-link">3. Architecture</a></li>
-                <li><a href="#privacy" class="toc-link">4. Stealth Mode</a></li>
-                <li><a href="#selection" class="toc-link">5. Data Precision</a></li>
-                <li><a href="#export" class="toc-link">6. The Vault Engine</a></li>
+                <li><a href="#quick-chat" class="toc-link">Quick Chat Flow</a></li>
+                <li><a href="#discovery" class="toc-link">Lead Discovery</a></li>
+                <li><a href="#browsing" class="toc-link">Product Browsing</a></li>
+                <li><a href="#privacy" class="toc-link">Privacy Protocol</a></li>
+                <li><a href="#selection" class="toc-link">Selection Logic</a></li>
+                <li><a href="#export" class="toc-link">The Export Engine</a></li>
             </ul>
         </aside>
 
         <main>
             <header>
-                <div class="badge">The Complete Product Index</div>
-                <h1>Powerful. Private. Professional.</h1>
-                <p class="meta">A comprehensive breakdown of the WaVault ecosystem.</p>
+                <div class="badge">The Product Blueprint</div>
+                <h1>WaVault Feature Guide</h1>
+                <p class="meta">Master the core workflows of the world's most advanced WhatsApp lead manager.</p>
             </header>
 
-            <section id="interaction">
-                <h2>1. Advanced Interaction Logic</h2>
-                <p>We designed WaVault to bridge the gap between the browser and your communication workflow. It acts as
-                    an invisible layer that makes every phone number interactive.</p>
+            <section id="quick-chat">
+                <h2>1. The Quick Chat Workflow</h2>
+                <p>Start conversations without the burden of saving numbers. WaVault turns the web into an interactive
+                    messaging platform.</p>
 
                 <div class="feature-card">
                     <h3>
-                        <div class="icon-circle">⚡</div> MAGIC RIGHT-CLICK (CONTEXT MENU)
+                        <div class="icon-circle">⚡</div> Website Right-Click
                     </h3>
-                    <p>Stop copying and pasting numbers. Right-click ANY phone number on any website—whether it's a CRM,
-                        a LinkedIn profile, or a portal—to instantly launch a WhatsApp chat without saving the number.
-                        It transforms the internet into a clickable directory.</p>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><strong>Highlight</strong> any phone number on any website (CRM,
+                                LinkedIn, Portals).</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><strong>Right-Click</strong> to open the context menu.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><strong>Click</strong> "Chat on WhatsApp" to open a blank chat
+                                instantly.</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <h3>
-                        <div class="icon-circle">🖱️</div> START CHAT PROTOCOL
+                        <div class="icon-circle">🖱️</div> Manual Start Chat
                     </h3>
-                    <p>Located in the header, the Start Chat module allows for manual entry of international numbers. It
-                        uses an intelligent E.164 parser to ensure your messages always hit the right destination on the
-                        first try.</p>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><strong>Open</strong> the WaVault side panel.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><strong>Click</strong> the Chat icon in the top header bar.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><strong>Enter</strong> any international number to message them
+                                directly.</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="discovery">
-                <h2>2. The Discovery Engine</h2>
-                <p>WaVault doesn't just "list" contacts; it understands them. Our metadata engine categorizes your
-                    entire WhatsApp ecosystem in seconds.</p>
+                <h2>2. Lead Discovery Engine</h2>
+                <p>Convert your raw WhatsApp session into a structured database with our local intelligence core.</p>
 
                 <div class="feature-card">
                     <h3>
-                        <div class="icon-circle">🔍</div> HYPER-LOCAL SCANNING
+                        <div class="icon-circle">🔍</div> Precision Scanning
                     </h3>
-                    <p>Our Precision Scanner performs a multi-threaded sweep of your session. It identifies **Business
-                        Accounts**, **Unsaved Leads**, and **Mutual Contacts** using the high-performance Rust WASM
-                        core. Nothing leaves your browser.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>
-                        <div class="icon-circle">✨</div> LABELS INTEGRATION
-                    </h3>
-                    <p>WaVault reads your native WhatsApp Labels. You can filter, search, and export based on the labels
-                        you've already created, making it the perfect companion for organized sales teams.</p>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><strong>Trigger</strong> the scan by clicking the Search/Scan
+                                icon.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><strong>Watch</strong> as the Rust core identifies Saved vs
+                                Unsaved leads.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><strong>Retrieve</strong> metadata including Labels and Business
+                                status automatically.</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section id="organization">
-                <h2>3. Multi-Dimensional Architecture</h2>
-                <p>Switch perspectives instantly to manage your audience from different strategic angles.</p>
+            <section id="browsing">
+                <h2>3. Strategic Browsing</h2>
+                <p>Manage tens of thousands of contacts with zero lag using our virtualized navigation system.</p>
 
-                <ul>
-                    <li><strong>Contacts View:</strong> Deep granularity. View saved, unsaved, and business contacts
-                        with one-click filtering.</li>
-                    <li><strong>Groups View:</strong> See all communities you inhabit. Sort by member count to identify
-                        your most high-leverage groups.</li>
-                    <li><strong>Countries View:</strong> Visual geography. Automatic flag recognition helps you
-                        visualize your global reach and export by region.</li>
-                </ul>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content"><strong>Switch Tabs</strong> between Contacts, Groups, and Countries
+                            perspectives.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content"><strong>Identify Groups</strong> sorted by member count to find
+                            high-value communities.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content"><strong>Visualize Reach</strong> in the Countries tab with automatic
+                            flag recognition.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-content"><strong>Fuzzy Search</strong> names and numbers to find specific leads
+                            instantly.</div>
+                    </div>
+                </div>
 
                 <div class="pro-box">
-                    <h4>VIRTUALIZED PERFORMANCE</h4>
-                    <p>Whether you have 50 or 50,000 contacts, WaVault remains butter-smooth. We use extreme
-                        virtualization to ensure 0ms lag during scrolling and searching.</p>
+                    <h4>VIRTUALIZATION MASTERY</h4>
+                    <p>WaVault renders only what you see on screen. This allows the app to stay smooth even if your
+                        database grows to 50,000+ entries.</p>
                 </div>
             </section>
 
             <section id="privacy">
-                <h2>4. Stealth & Privacy Protocol</h2>
-                <p>For the professionals operating in public spaces or recording demos, WaVault provides built-in data
-                    protection.</p>
+                <h2>4. Universal Privacy Protocol</h2>
+                <p>Protect your data while recording demos or presenting in public spaces.</p>
 
                 <div class="feature-card">
                     <h3>
-                        <div class="icon-circle">👁️</div> PRIVACY MODE (ZEN)
+                        <div class="icon-circle">👁️</div> Privacy Mode (Zen)
                     </h3>
-                    <p>Press <strong>Alt + Shift + P</strong> to instantly blur all names, phone numbers, and profile
-                        pictures. Perfect for screen sharing, YouTube recordings, or remote presentations without
-                        compromising your lead database.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>
-                        <div class="icon-circle">🔒</div> ZERO-KNOWLEDGE CORE
-                    </h3>
-                    <p>WaVault is an offline-first tool. Your data is stored behind the browser's native AES-256
-                        encryption layer. We technically cannot see your contacts, and your data never touches our
-                        servers.</p>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><strong>Press</strong> the shortcut: <strong>Alt + Shift +
+                                    P</strong>.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><strong>Witness</strong> as all names and phone numbers are
+                                instantly blurred.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><strong>Present</strong> with confidence without leaking private
+                                customer data.</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="selection">
-                <h2>5. Precision Data Selection</h2>
-                <p>Data export is useless without precision. WaVault uses "Scoped Selection" to prevent accidental data
-                    leaks.</p>
+                <h2>5. High-Precision Selection</h2>
+                <p>Experience the "What You See Is What You Export" philosophy for clean data management.</p>
 
-                <div class="feature-card">
-                    <h3>
-                        <div class="icon-circle">✔️</div> WHAT YOU SEE IS WHAT YOU EXPORT
-                    </h3>
-                    <p>Our selection engine is linked to your current view. If you search "New York" and hit **Select
-                        All**, only the New York filtered leads are captured. This is the gold standard for lead
-                        segmentation.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>
-                        <div class="icon-circle">🔄</div> AVATAR GESTURES
-                    </h3>
-                    <p>Hover and click any profile picture to activate selection mode. It’s an intuitive, tactile
-                        interaction designed for high-speed lead management.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content"><strong>Individual Toggle:</strong> Click any contact avatar to select
+                            specific leads.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content"><strong>Bulk Select:</strong> Use the Header Checkbox to select
+                            everything in your current filtered view.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content"><strong>Auto-Clean:</strong> Switch tabs to automatically clear
+                            selection and prevent cross-tab pollution.</div>
+                    </div>
                 </div>
             </section>
 
             <section id="export">
                 <h2>6. The Vault Export Engine</h2>
-                <p>Turn your browser data into a portable asset. We support three industry-standard formats, each with
-                    specialized logic.</p>
+                <p>Convert your locally stored database into portable, business-ready assets.</p>
 
-                <div style="margin-top: 3rem;">
-                    <h3><span class="format-pill" style="background: #DCFCE7; color: #14532D;">EXCEL</span> The
-                        Analyst's Workspace</h3>
-                    <p>Pro-grade `.xlsx` files. Includes auto-filter headers, sanitized sheet names, and pre-formatted
-                        columns. Ready to be dropped directly into Salesforce, HubSpot, or Pipedrive.</p>
+                <div class="feature-card">
+                    <h3><span class="format-pill" style="background: #DCFCE7; color: #14532D;">EXCEL</span> The Analyst
+                        Specialty</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-content"><strong>CRM Ready:</strong> Auto-filter headers are applied to
+                                every sheet.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-content"><strong>Hygiene:</strong> Redundant metadata is removed for a
+                                professional spreadsheet look.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-content"><strong>Optimized:</strong> Column widths are calculated to fit
+                                your content perfectly.</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-top: 2rem;">
+                <div class="feature-card">
                     <h3><span class="format-pill" style="background: #E0F2FE; color: #0C4A6E;">CSV</span> The Logic
                         Bridge</h3>
-                    <p>Universal compatibility. Perfect for developers, data scientists, and custom Python/Node scripts.
-                        RFC-compliant with zero formatting overhead.</p>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-content"><strong>Script Friendly:</strong> Universal RFC-compliant format
+                                for Python or Node processing.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-content"><strong>Zero Overhead:</strong> Lightweight data without
+                                proprietary software locks.</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-top: 2rem;">
-                    <h3><span class="format-pill" style="background: #F3E8FF; color: #581C87;">VCARD</span> The Mobile
-                        Native</h3>
-                    <p>The fastest way to get leads into your phone. Generate `.vcf` files that can be opened on iOS and
-                        Android to instantly add hundreds of contacts to your mobile address book.</p>
+                <div class="feature-card">
+                    <h3><span class="format-pill" style="background: #F3E8FF; color: #581C87;">VCARD</span> Virtual
+                        Contact Sync</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-content"><strong>1-Click Sync:</strong> Open the file on iOS or Android to
+                                add leads to your phone.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-content"><strong>Standardized:</strong> Uses global contact sharing
+                                protocols for maximum reliability.</div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2026 WaVault. The industry standard for private contact management. Built for performance.</p>
+        <p>&copy; 2026 WaVault. Secure. Structured. Professional.</p>
     </footer>
 
     <script>
-        // Simple reveal animation
-        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('active'); }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('section').forEach(section => {
             section.classList.add('reveal');
