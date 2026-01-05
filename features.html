@@ -275,6 +275,54 @@
             margin: 0 2px;
         }
 
+        /* --- Support Section --- */
+        .support-card {
+            background: #FFDD00;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 6rem 0;
+            color: #000000;
+            box-shadow: 0 8px 30px rgba(255, 221, 0, 0.2);
+        }
+
+        .support-card h2 {
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .support-card p {
+            color: rgba(0, 0, 0, 0.7);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            font-weight: 500;
+        }
+
+        .bmc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem 2rem;
+            background: #000000;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bmc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .bmc-btn img {
+            height: 24px;
+        }
+
         /* --- Global Footer --- */
         .site-footer {
             border-top: 1px solid var(--border);
@@ -320,6 +368,10 @@
             h1 {
                 font-size: 2.5rem;
             }
+
+            .support-card {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -347,6 +399,7 @@
                 <li><a href="#exports" class="toc-link">CRM Vault</a></li>
                 <li><a href="#free" class="toc-link">Unlimited Access</a></li>
                 <li><a href="#privacy" class="toc-link">Zen Stealth</a></li>
+                <li><a href="#support" class="toc-link">Support Development</a></li>
             </ul>
         </aside>
 
@@ -513,6 +566,18 @@
                     <strong>Privacy Standard</strong>
                     100% of lead extraction happens in your browser's local memory. No contact data ever touches our
                     servers. Your vault is private by design.
+                </div>
+            </section>
+
+            <section id="support">
+                <div class="support-card">
+                    <h2>Fuel the Development</h2>
+                    <p>WaVault is a community-first project. Your support helps us maintain the infrastructure and build
+                        the features you love.</p>
+                    <a href="https://buymeacoffee.com/HouseOf2" target="_blank" class="bmc-btn">
+                        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+                        <span>Buy me a coffee</span>
+                    </a>
                 </div>
             </section>
         </main>
