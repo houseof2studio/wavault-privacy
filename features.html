@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaVault: Features & Capabilities Guide</title>
+    <title>Features & Capabilities — WaVault</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #FAFAF9;
@@ -20,9 +19,11 @@
             --border: #E7EDEF;
             --accent: #F59E0B;
             --accent-bg: rgba(245, 158, 11, 0.08);
-            --max-width: 1200px;
-            --content-width: 760px;
-            --radius: 20px;
+            --success: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.08);
+
+            --max-width: 1100px;
+            --content-width: 680px;
         }
 
         * {
@@ -36,22 +37,22 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            line-height: 1.65;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Elite Header --- */
+        /* --- Global Header --- */
         nav {
             position: sticky;
             top: 0;
-            background: rgba(250, 250, 249, 0.85);
-            backdrop-filter: blur(16px);
+            background: rgba(250, 250, 249, 0.8);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            height: 72px;
+            z-index: 100;
+            height: 64px;
             display: flex;
             align-items: center;
         }
@@ -60,46 +61,47 @@
             max-width: var(--max-width);
             margin: 0 auto;
             width: 100%;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-weight: 900;
+            font-weight: 800;
             font-size: 1.25rem;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.03em;
             color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         /* --- Layout --- */
-        .page-wrapper {
+        .wrapper {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 1.5rem;
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 5rem;
+            grid-template-columns: 240px 1fr;
+            gap: 4rem;
         }
 
+        /* --- Sidebar --- */
         aside {
             position: sticky;
-            top: 120px;
+            top: 100px;
             height: fit-content;
         }
 
         .toc-title {
-            font-size: 0.8rem;
-            font-weight: 800;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .toc-list {
@@ -110,110 +112,77 @@
         }
 
         .toc-link {
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.875rem;
+            font-weight: 500;
             color: var(--text-muted);
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s;
             display: block;
-            padding: 6px 0;
         }
 
         .toc-link:hover {
             color: var(--primary);
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         .toc-link.active {
             color: var(--primary);
-            padding-left: 12px;
-            border-left: 2px solid var(--primary);
+            font-weight: 700;
         }
 
+        /* --- Main Content --- */
         main {
             max-width: var(--content-width);
         }
 
         header {
-            margin-bottom: 6rem;
+            margin-bottom: 3.5rem;
         }
 
-        .hero-badge {
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: var(--primary-bg);
+            padding: 0.35rem 0.85rem;
+            background-color: var(--primary-bg);
             color: var(--primary);
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
         }
 
         h1 {
-            font-size: 4.5rem;
-            line-height: 1;
-            font-weight: 900;
-            letter-spacing: -0.06em;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
             margin-bottom: 1.5rem;
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             color: var(--text-muted);
-            font-weight: 500;
             margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
-        section {
-            margin-bottom: 8rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            margin: 0 0 1.5rem;
-            scroll-margin-top: 120px;
-            color: var(--text-main);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        p {
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-            color: var(--text-muted);
-        }
-
-        /* --- Component Styles --- */
-        .card {
-            background: var(--surface);
+        .value-card {
+            background: white;
             border: 1px solid var(--border);
             padding: 2.5rem;
-            border-radius: var(--radius);
-            margin: 2.5rem 0;
-            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            border-radius: 24px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .value-card:hover {
+            border-color: var(--primary);
         }
 
-        .icon-vault {
+        .icon-box {
             width: 44px;
             height: 44px;
             background: var(--primary-bg);
@@ -222,155 +191,127 @@
             align-items: center;
             justify-content: center;
             color: var(--primary);
+            margin-bottom: 1.5rem;
             font-size: 1.25rem;
         }
 
-        .step-container {
+        /* --- Section Styling --- */
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0 0 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2rem 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-main);
+        }
+
+        p {
+            font-size: 1.0625rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .step-list {
             list-style: none;
-            margin-top: 2rem;
+            margin: 1.5rem 0;
             counter-reset: step-counter;
         }
 
-        .step {
+        .step-item {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
             align-items: flex-start;
         }
 
-        .step::before {
+        .step-item::before {
             counter-increment: step-counter;
             content: counter(step-counter);
             flex-shrink: 0;
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             background: var(--text-main);
             color: white;
-            border-radius: 10px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 800;
-        }
-
-        .step-txt {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            padding-top: 4px;
-        }
-
-        .step-txt strong {
-            color: var(--text-main);
+            font-size: 0.75rem;
             font-weight: 700;
         }
 
-        .pro-tip {
+        .step-txt {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+        }
+
+        .pro-highlight {
             background: var(--accent-bg);
             border-left: 4px solid var(--accent);
-            padding: 2rem;
-            border-radius: 16px;
-            margin: 3rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
         }
 
-        .pro-tip h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .pro-tip p {
-            color: var(--text-main);
-            font-size: 1.05rem;
-            margin-bottom: 0;
-            font-weight: 600;
-        }
-
-        .feature-pill {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 14px;
-            background: #E7EDEF;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            font-weight: 800;
+        .pro-highlight h4 {
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            color: var(--text-muted);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
         }
 
-        .highlight-box {
-            background: #1C1C1A;
-            color: white;
-            padding: 3rem;
-            border-radius: 32px;
-            margin: 4rem 0;
-            text-align: center;
-        }
-
-        .highlight-box h2 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .highlight-box p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer {
-            border-top: 1px solid var(--border);
-            padding: 5rem 0;
-            margin-top: 10rem;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: -0.05em;
+        .pro-highlight p {
             color: var(--text-main);
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
+            font-size: 0.9375rem;
+            margin: 0;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.2s;
         }
 
-        .footer-link:hover {
-            color: var(--primary);
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            background: #E7EDEF;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-right: 8px;
+            color: var(--text-muted);
         }
 
-        /* Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        /* --- Global Footer --- */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 6rem;
+            text-align: center;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .site-footer p {
+            font-size: 0.875rem;
+            margin: 0;
         }
 
-        @media (max-width: 1024px) {
-            .page-wrapper {
+        /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            .wrapper {
                 grid-template-columns: 1fr;
                 padding-top: 2rem;
             }
@@ -380,7 +321,7 @@
             }
 
             h1 {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -390,304 +331,248 @@
     <nav>
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="icon.svg" alt="WaVault" style="width: 28px; height: 28px; border-radius: 8px;">
+                <img src="icon.svg" alt="WaVault Logo" style="width: 28px; height: 28px; border-radius: 6px;">
                 WaVault
             </a>
-            <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted)">VERSION 1.0.4</div>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted)">VERSION 1.0.4</div>
         </div>
     </nav>
 
-    <div class="page-wrapper">
+    <div class="wrapper">
         <aside>
             <div class="toc-title">Guide Sections</div>
             <ul class="toc-list">
-                <li><a href="#quick-chat" class="toc-link">1. Start Chat & Messaging</a></li>
-                <li><a href="#discovery" class="toc-link">2. Intelligence Dashboard</a></li>
-                <li><a href="#organization" class="toc-link">3. Global Leads Geography</a></li>
-                <li><a href="#selection" class="toc-link">4. Precision Data Selection</a></li>
-                <li><a href="#vault" class="toc-link">5. Professional Export Vault</a></li>
-                <li><a href="#privacy" class="toc-link">6. Security & Stealth Protocol</a></li>
-                <li><a href="#support" class="toc-link">7. Zen Support & Themes</a></li>
+                <li><a href="#interaction" class="toc-link">Direct Messaging</a></li>
+                <li><a href="#intelligence" class="toc-link">Lead Intelligence</a></li>
+                <li><a href="#geography" class="toc-link">Targeting Regions</a></li>
+                <li><a href="#precision" class="toc-link">Mass Selection</a></li>
+                <li><a href="#export" class="toc-link">CRM Integration</a></li>
+                <li><a href="#stealth" class="toc-link">Privacy & Demos</a></li>
             </ul>
         </aside>
 
         <main>
-            <header class="reveal">
-                <div class="hero-badge">Official Manual</div>
-                <h1>Features & Capabilities Guide.</h1>
-                <p class="subtitle">A comprehensive breakdown of every tool, workflow, and professional superpower
-                    engineered for WaVault.</p>
+            <header>
+                <div class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Professional Grade
+                </div>
+                <h1>Features & Capabilities</h1>
+                <p class="subtitle">A strategic manual designed to help you transform WhatsApp into your primary
+                    business lead generation engine.</p>
             </header>
 
-            <section id="quick-chat" class="reveal">
-                <h2>1. Start Chat & Messaging</h2>
-                <p>Chat effortlessly. WaVault connects the dots between your browsing experience and your communication
-                    strategy.</p>
+            <section id="interaction">
+                <div class="value-card">
+                    <div class="icon-box">⚡</div>
+                    <h2>Eliminate Messaging Friction</h2>
+                    <p>Stop wasting time saving numbers. WaVault allows you to message any business lead directly from
+                        your browser, saving you hours of tedious phone contact management.</p>
+                </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">⚡</div> Magic Right-Click Chat
-                    </h3>
-                    <p>Transform the entire web into a clickable directory. Message anyone on any portal without saving
-                        their number.</p>
-                    <div class="step-container">
-                        <div class="step">
-                            <div class="step-txt"><strong>Highlight</strong> any phone number on any website (CRM,
-                                LinkedIn, Portals).</div>
+                <h3>Magic Context Messenger</h3>
+                <p>Ever found a lead on a CRM or Portal and wished you could just chat? Now you can.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Highlight</strong> any phone number on any website.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Right-Click</strong> to see the custom "Chat on WhatsApp" menu.
                         </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Right-Click</strong> to see the custom "Chat on WhatsApp"
-                                menu.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Talk</strong> immediately without adding them to your mobile
-                                contacts.</div>
-                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Talk</strong> immediately without adding them to your phone
+                            contacts.</div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">🖱️</div> Direct Messenger
-                    </h3>
-                    <p>Designed for speed when you already have the number. No more "New Chat" friction.</p>
-                    <div class="step-container">
-                        <div class="step">
-                            <div class="step-txt"><strong>Tap</strong> the Chat Bubble icon in the
-                                <strong>top-right</strong> of the WaVault header.
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Enter</strong> the international number with the country code.
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Launch</strong> the conversation with a single keystroke.
-                            </div>
-                        </div>
+                <h3>The Direct Messenger</h3>
+                <p>Perfect for when you have a number ready and need to strike while the lead is hot.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Tap</strong> the Chat Bubble icon in the
+                            <strong>top-right</strong> of the header.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Paste</strong> the international number.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Connect</strong> instantly in a new WhatsApp tab.</div>
                     </div>
                 </div>
             </section>
 
-            <section id="discovery" class="reveal">
-                <h2>2. Intelligence Dashboard</h2>
-                <p>WaVault doesn't just list data; it builds your intelligence. Stop hunting for leads; let them find
-                    you.</p>
+            <section id="intelligence">
+                <div class="value-card">
+                    <div class="icon-box">🔍</div>
+                    <h2>Automate Your Lead Intelligence</h2>
+                    <p>Don't just collect numbers; build a database. WaVault automatically identifies your highest-value
+                        contacts so you can prioritize your time where it matters.</p>
+                </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">🔍</div> Hyper-Sync Discovery
-                    </h3>
-                    <p>Automatically identifies and structures your entire chat history in seconds.</p>
-                    <div class="step-container">
-                        <div class="step">
-                            <div class="step-txt"><strong>Sync</strong> your active session with one click from the
-                                dashboard.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Identify</strong> Business vs. Private accounts automatically.
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Map</strong> display names and "About" statuses into a
-                                searchable database.</div>
-                        </div>
+                <h3>Hyper-Sync Discovery</h3>
+                <p>Turn your messy chat history into a structured goldmine in seconds.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Sync</strong> your active session with one click from the
+                            dashboard.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Identify</strong> which contacts are Business vs. Private
+                            automatically.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Map</strong> display names and "About" statuses into your local
+                            dashboard.</div>
                     </div>
                 </div>
 
-                <div class="pro-tip">
-                    <h4>PRO TIP : DASHBOARD STATS</h4>
-                    <p>Use the Hero Stats on the dashboard to see your lead growth at a glance. It live-updates as you
-                        sync your data.</p>
+                <div class="pro-highlight">
+                    <h4>WHY IT MATTERS</h4>
+                    <p>The Hero Stats on your dashboard give you a bird's-eye view of your lead growth. Track your
+                        unsaved versus saved contacts to measure your outreach success.</p>
                 </div>
             </section>
 
-            <section id="organization" class="reveal">
-                <h2>3. Global Leads Geography</h2>
-                <p>Manage tens of thousands of leads without ever losing your place.</p>
+            <section id="geography">
+                <div class="value-card">
+                    <div class="icon-box">🌍</div>
+                    <h2>Target Global Markets with Precision</h2>
+                    <p>Scale your business globally. WaVault categorizes your leads by country and group involvement,
+                        allowing you to run hyper-targeted local campaigns.</p>
+                </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">🌍</div> World View Navigation
-                    </h3>
-                    <div class="step-list">
-                        <div class="step">
-                            <div class="step-txt"><strong>Geographic Tabs</strong>: Sort leads by Country, Groups, or
-                                recent Contact.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Flag Recognition</strong>: See colorful flags for 200+
-                                countries automatically.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Fuzzy Search</strong>: Find names or numbers instantly even if
-                                you make a typo.</div>
-                        </div>
+                <h3>Global View Navigation</h3>
+                <p>Navigate tens of thousands of leads sorted by geographic regions.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Switch Tabs</strong>: Sort leads by Country, Groups, or recent
+                            interaction.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Flag Recognition</strong>: Instantly identify lead regions with
+                            colorful flags for 200+ countries.</div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">👥</div> Group Extraction Plus
-                    </h3>
-                    <p>Extract every participant from every group you belong to without manual scrolling.</p>
-                    <div class="step-container">
-                        <div class="step">
-                            <div class="step-txt"><strong>Switch</strong> to the specialized Groups Tab.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Prioritize</strong> by sorting groups according to member
-                                size.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Sync</strong> the entire membership of any group into your
-                                export vault.</div>
-                        </div>
+                <h3>Elite Group Extraction</h3>
+                <p>Extract every participant from your professional groups without a single manual copy-paste.</p>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Browse</strong> the specialized Groups Tab.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Prioritize</strong> groups by seeing their total member count at a
+                            glance.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Sync</strong> the entire membership list for outreach or
+                            safeguarding.</div>
                     </div>
                 </div>
             </section>
 
-            <section id="selection" class="reveal">
-                <h2>4. Precision Data Selection</h2>
-                <p>Selection is the "Aha!" moment of WaVault. We've built an engine that works at the speed of thought.
-                </p>
+            <section id="precision">
+                <div class="value-card">
+                    <div class="icon-box">✔️</div>
+                    <h2>Effortless Bulk Selection</h2>
+                    <p>We've engineered selection to work at the speed of thought. Whether it's 5 contacts or 5,000,
+                        your workflow remains smooth and responsive.</p>
+                </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">✔️</div> One-Tap Avatar Sync
-                    </h3>
-                    <div class="step-list">
-                        <div class="step">
-                            <div class="step-txt"><strong>Click Avatars</strong>: Simply tap any profile picture to
-                                select that contact.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Select All</strong>: Use the smart checkbox to pick only the
-                                contacts in your current filtered view.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Auto-Clean</strong>: Switching tabs clears your selection
-                                automatically to keep your exports pure.</div>
-                        </div>
+                <h3>One-Tap Avatar Selection</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Tap Avatars</strong>: Click any profile picture to select a
+                            contact with a satisfied "click" feel.</div>
                     </div>
-                </div>
-            </section>
-
-            <section id="vault" class="reveal">
-                <h2>5. Professional Export Vault</h2>
-                <p>Data portability is power. Convert your browser leads into your business's most valuable asset.</p>
-
-                <div style="margin-top: 3rem;">
-                    <h3><span class="feature-pill" style="background:#DCFCE7; color:#166534">EXCEL</span> The Analyst's
-                        Workspace</h3>
-                    <p>Professional `.xlsx` files with auto-filter headers and sanitized data. Ready to drop into
-                        Salesforce, HubSpot, or any high-end CRM.</p>
-                </div>
-
-                <div style="margin-top: 2rem;">
-                    <h3><span class="feature-pill" style="background:#E0F2FE; color:#075985">CSV</span> The Developer
-                        Bridge</h3>
-                    <p>Lightweight, universal data for scripts, bulk uploaders, and cross-platform syncing.</p>
-                </div>
-
-                <div style="margin-top: 2rem;">
-                    <h3><span class="feature-pill" style="background:#F3E8FF; color:#6B21A8">VCARD</span> Direct Phone
-                        Sync</h3>
-                    <p>The fastest way to move web leads to your mobile phone contacts. Tap once to add hundreds of
-                        contacts to your iPhone or Android.</p>
-                </div>
-            </section>
-
-            <section id="privacy" class="reveal">
-                <h2>6. Security & Stealth Protocol</h2>
-                <p>We believe your data belongs to you alone. 100% of the processing happens on your local device.</p>
-
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">👁️</div> Zen Mode (Stealth)
-                    </h3>
-                    <p>Share your screen or record videos with absolute peace of mind.</p>
-                    <div class="step-container">
-                        <div class="step">
-                            <div class="step-txt"><strong>Press</strong> the universal shortcut: <strong>Alt + Shift +
-                                    P</strong>.</div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Mask</strong> all names, phone numbers, and images instantly.
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-txt"><strong>Privacy</strong> : No customer data is ever leaked during
-                                demos or calls.</div>
-                        </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Select View</strong>: The smart header checkbox picks only what
+                            you've currently filtered.</div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">🔒</div> Zero-Knowledge Policy
-                    </h3>
-                    <p>WaVault uses your local browser memory to process data. We technically cannot see your leads, and
-                        we never will. Private by design.</p>
+                <div class="pro-highlight">
+                    <h4>SMART RESET</h4>
+                    <p>Switching folders or tabs clears your selection automatically. This prevents "data pollution" and
+                        ensures your exports are always exactly what you intended.</p>
                 </div>
             </section>
 
-            <section id="support" class="reveal">
-                <h2>7. Zen Support & Themes</h2>
-                <p>A tool that feels as good as it works. Every pixel is optimized for professional comfort.</p>
-
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">🌓</div> High-Fidelity Themes
-                    </h3>
-                    <p>Switch between Light, Dark, or System mode to match your current work environment perfectly.</p>
+            <section id="export">
+                <div class="value-card">
+                    <div class="icon-box">📥</div>
+                    <h2>Seamless CRM Integration</h2>
+                    <p>Your leads are only as good as where they go. Export to the world's most standard professional
+                        formats and sync with your existing sales stack.</p>
                 </div>
 
-                <div class="card">
-                    <h3>
-                        <div class="icon-vault">☕</div> Community Support
-                    </h3>
-                    <p>Supported by users like you. Access the "Buy Me a Coffee" portal directly from the header to
-                        support the development of your favorite tools.</p>
+                <div>
+                    <h3><span class="pill">EXCEL</span> The Analyst's Workspace</h3>
+                    <p>Professional `.xlsx` files with auto-filter headers and sanitized data. Ready for Salesforce or
+                        HubSpot.</p>
                 </div>
 
-                <div class="pro-tip" style="background:rgba(99,102,241,0.05); border-left-color: var(--primary)">
-                    <h4 style="color:var(--primary)">24/7 SUPPORT</h4>
-                    <p>Click "Help & Support" in the menu to reach our expert team directly via email. We are here to
-                        help you scale your business.</p>
+                <div>
+                    <h3><span class="pill">CSV</span> Universal Portability</h3>
+                    <p>Lightweight data for mass uploaders and cross-platform syncing.</p>
+                </div>
+
+                <div>
+                    <h3><span class="pill">VCARD</span> Instant Phone Sync</h3>
+                    <p>The fastest way to move web leads to your iPhone or Android. Add hundreds of contacts in one tap.
+                    </p>
                 </div>
             </section>
 
-            <div class="highlight-box reveal">
-                <h2>Ready to Start?</h2>
-                <p>Download WaVault and transform your WhatsApp into a professional lead generation engine.</p>
-            </div>
+            <section id="stealth">
+                <div class="value-card">
+                    <div class="icon-box">👁️</div>
+                    <h2>Professional Privacy Standard</h2>
+                    <p>Built for the modern professional. WaVault ensures that your sensitive client data is never
+                        leaked during screen shares, demos, or presentation recordings.</p>
+                </div>
+
+                <h3>Zen Mode (Stealth)</h3>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Press</strong> the shortcut: <strong>Alt + Shift + P</strong>.
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Mask</strong> all names, phone numbers, and profile images
+                            instantly.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-txt"><strong>Record</strong> with confidence, knowing your customer database is
+                            invisible.</div>
+                    </div>
+                </div>
+
+                <div class="pro-highlight">
+                    <h4>ZERO-KNOWLEDGE SECURITY</h4>
+                    <p>WaVault processes data 100% locally in your browser. We never see your leads, we never store your
+                        data, and we never share it. Your vault is private by design.</p>
+                </div>
+            </section>
         </main>
     </div>
 
-    <footer class="footer reveal">
-        <div class="footer-logo">WaVault</div>
-        <p>&copy; 2026. Professional. Simple. Secure.</p>
-        <div class="footer-links">
-            <a href="index.html" class="footer-link">Privacy Policy</a>
-            <a href="terms.html" class="footer-link">Terms of Service</a>
-            <a href="#" class="footer-link">Features Bible</a>
+    <footer class="site-footer">
+        <p>&copy; 2026 WaVault. All rights reserved. Locally processed in your browser.</p>
+        <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem;">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">Privacy
+                Policy</a>
+            <a href="terms.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">Terms of
+                Service</a>
+            <a href="#" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">User Guide</a>
         </div>
     </footer>
 
     <script>
-        // Reveal Logic
-        const observerOptions = { threshold: 0.15 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
         // TOC Active Link Script
         const tocLinks = document.querySelectorAll('.toc-link');
         const sections = document.querySelectorAll('section');
@@ -696,7 +581,7 @@
             let current = "";
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
+                if (pageYOffset >= sectionTop - 120) {
                     current = section.getAttribute('id');
                 }
             });
