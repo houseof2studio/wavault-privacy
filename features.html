@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features & Capabilities — WaVault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --surface: #FFFFFF;
+            --text-main: #1C1C1A;
+            --text-muted: #52524E;
+            --primary: #6366F1;
+            --primary-bg: rgba(99, 102, 241, 0.08);
+            --border: #E7EDEF;
+            --accent: #F59E0B;
+            --accent-bg: rgba(245, 158, 11, 0.08);
+            --max-width: 1100px;
+            --content-width: 680px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Global Header --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 249, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Layout --- */
+        .wrapper {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 4rem;
+        }
+
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toc-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        main {
+            max-width: var(--content-width);
+        }
+
+        header {
+            margin-bottom: 3.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background-color: var(--primary-bg);
+            color: var(--primary);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0 0 1.5rem;
+            scroll-margin-top: 100px;
+            color: var(--text-main);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--text-main);
+        }
+
+        p {
+            font-size: 1.0625rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .pro-tip {
+            background: var(--accent-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .pro-tip strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: -1rem;
+            font-weight: bold;
+        }
+
+        .format-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-right: 6px;
+        }
+
+        .bg-excel {
+            background: #DCFCE7;
+            color: #166534;
+        }
+
+        .bg-csv {
+            background: #E0F2FE;
+            color: #075985;
+        }
+
+        .bg-vcard {
+            background: #F3E8FF;
+            color: #6B21A8;
+        }
+
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 6rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+                padding-top: 2rem;
+            }
+
+            aside {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="icon.svg" alt="WaVault Logo" style="width: 28px; height: 28px; border-radius: 6px;">
+                WaVault
+            </a>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted)">Protocol 1.0.4</div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <aside>
+            <div class="toc-title">Feature Guide</div>
+            <ul class="toc-list">
+                <li><a href="#start-chat" class="toc-link">Start Chat</a></li>
+                <li><a href="#scanning" class="toc-link">Precision Scanning</a></li>
+                <li><a href="#navigation" class="toc-link">Tab Management</a></li>
+                <li><a href="#filtering" class="toc-link">Search & Filter</a></li>
+                <li><a href="#selection" class="toc-link">Selection Engine</a></li>
+                <li><a href="#export" class="toc-link">Export Ecosystem</a></li>
+                <li><a href="#specialties" class="toc-link">Format Specialties</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <header>
+                <div class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2L3 14h9l-1 8 10-10h-9l1-8z" />
+                    </svg>
+                    Performance Optimized
+                </div>
+                <h1>System Features</h1>
+                <div class="meta">
+                    <div>Updated: January 5, 2026</div>
+                    <div>Version: 1.0.4</div>
+                </div>
+            </header>
+
+            <section id="start-chat">
+                <h2>1. The Instant Connection</h2>
+                <p>WaVault eliminates the "save-to-phone" friction. Use the <strong>Start Chat</strong> feature (located
+                    in the top icon bar) to message any number globally without adding them to your permanent phone
+                    contacts.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Global Entry</h4>
+                        <p>Supports international E.164 formats automatically. Just type the number and enter.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Zero-Footprint</h4>
+                        <p>Messages are sent through the WhatsApp Web bridge, keeping your mobile address book clean.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scanning">
+                <h2>2. Precision Scanning</h2>
+                <p>The core of WaVault is its <strong>Intelligence Engine</strong>. When you hit the scan icon, the
+                    extension performs a non-intrusive metadata sweep of your active WhatsApp session.</p>
+                <ul>
+                    <li><strong>IDLE State:</strong> The extension remains dormant to save CPU until a scan is
+                        triggered.</li>
+                    <li><strong>Security Sandbox:</strong> All data is structured locally using the compiled Rust WASM
+                        core.</li>
+                    <li><strong>Real-time Progress:</strong> Visual feedback as the engine identifies Saved, Unsaved,
+                        and Business contacts.</li>
+                </ul>
+                <div class="pro-tip">
+                    <strong>Pro Tip</strong>
+                    The scan doesn't upload your messages. It only reads the contact identifiers and labels you see on
+                    screen to build your local workspace.
+                </div>
+            </section>
+
+            <section id="navigation">
+                <h2>3. Tab Management</h2>
+                <p>Organize your leads through three specialized, high-performance perspectives. WaVault uses
+                    <strong>Virtual Scrolling</strong> to handle lists of tens of thousands without lag.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Contacts Tab</h4>
+                        <p>Your main database. Divided into "My Contacts" and "Others" for clear lead prioritization.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Groups Tab</h4>
+                        <p>Aggregates all your active groups by member count. Perfect for niche community management.
+                        </p>
+                    </div>
+                    <div class="feature-card" style="grid-column: span 2;">
+                        <h4>Country Tab</h4>
+                        <p>An intelligent geographical breakdown. See exactly where your leads are coming from globally
+                            with automatic flag recognition.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="filtering">
+                <h2>4. Search & Filter</h2>
+                <p>Locate any specific lead in milliseconds. The WaVault search bar performs a multi-field "Fuzzy
+                    Search" across names, phone numbers, and WhatsApp Labels.</p>
+                <ul>
+                    <li><strong>Deep Search:</strong> The engine queries against a normalized <code>_searchStr</code> to
+                        ensure no match is missed.</li>
+                    <li><strong>Status Filtering:</strong> Instantly isolate "Business" or "Unsaved" contacts via the
+                        sub-navigation headers.</li>
+                </ul>
+            </section>
+
+            <section id="selection">
+                <h2>5. Selection Engine</h2>
+                <p>WaVault implements <strong>Scoped Selection</strong> (Best Practice). This ensures you only export
+                    exactly what you intend to, preventing data pollution.</p>
+                <ul>
+                    <li><strong>Select All:</strong> A smart checkbox that selects only the items currently visible in
+                        your filtered view.</li>
+                    <li><strong>Avatar Toggle:</strong> Click an avatar to enter "Selection Mode." Snap animations
+                        provide tactile feedback.</li>
+                    <li><strong>Clear-on-Switch:</strong> Switching tabs (e.g., from Groups to Countries) clears your
+                        current selection to keep your export "clean."</li>
+                </ul>
+            </section>
+
+            <section id="export">
+                <h2>6. The Export Ecosystem</h2>
+                <p>The Unified Export Bar at the bottom of the interface is your gateway to data portability. It
+                    provides three distinct formats, each optimized for a specific business workflow.</p>
+                <div class="pro-tip" style="background: var(--primary-bg); border-color: var(--primary);">
+                    <strong>A11Y Standard</strong>
+                    The entire export flow is keyboard-accessible (WCAG AA), featuring clear focus states for screen
+                    reader compatibility.
+                </div>
+            </section>
+
+            <section id="specialties">
+                <h2>7. Format Specialties</h2>
+                <p>Deep analysis of why WaVault offers three distinct file types:</p>
+
+                <h3><span class="format-badge bg-excel">Excel</span> Microsoft Excel (.xlsx)</h3>
+                <p><strong>The Analyst's Choice.</strong> Best for CRM imports (Salesforce, HubSpot) and lead analysis.
+                </p>
+                <ul>
+                    <li><strong>CRM-Ready:</strong> Auto-formatted headers and sanitized sheet names.</li>
+                    <li><strong>Smart Columns:</strong> Optimized column widths and data validation.</li>
+                    <li><strong>Data Cleaning:</strong> Automatically removes redundant WhatsApp metadata for a clean
+                        spreadsheet.</li>
+                </ul>
+
+                <h3><span class="format-badge bg-csv">CSV</span> Comma Separated Values (.csv)</h3>
+                <p><strong>The Universal Bridge.</strong> Best for developers, data scientists, and legacy systems.</p>
+                <ul>
+                    <li><strong>RFC Compliant:</strong> Guaranteed to work with any coding language or script (Python,
+                        R, Node).</li>
+                    <li><strong>Lightweight:</strong> Zero overhead. Just raw, structured data.</li>
+                </ul>
+
+                <h3><span class="format-badge bg-vcard">VCard</span> Virtual Contact File (.vcf)</h3>
+                <p><strong>The Mobile Native.</strong> Best for direct-to-phone contact syncing.</p>
+                <ul>
+                    <li><strong>1-Click Import:</strong> Open the file on your iPhone or Android to instantly add
+                        hundreds of leads to your phone book.</li>
+                    <li><strong>Standardized:</strong> Follows global contact sharing standards.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 WaVault. All rights reserved. Locally processed and documented.</p>
+    </footer>
+</body>
+
+</html>
