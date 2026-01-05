@@ -302,18 +302,27 @@
         .bmc-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
+            gap: 12px;
+            padding: 12px 24px;
+            background: #FFDD00;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .bmc-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(255, 221, 0, 0.3);
         }
 
-        .bmc-btn img {
-            height: 50px;
-            border-radius: 8px;
+        .bmc-btn svg {
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
         /* --- Global Footer --- */
@@ -569,7 +578,15 @@
                     <p>WaVault is a community-first project. Your support helps us maintain the infrastructure and build
                         the features you love.</p>
                     <a href="https://buymeacoffee.com/HouseOf2" target="_blank" class="bmc-btn">
-                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.38 8H18.25V7C18.25 5.34 16.91 4 15.25 4H5.25C3.59 4 2.25 5.34 2.25 7V15C2.25 18.31 4.94 21 8.25 21H12.25C15.56 21 18.25 18.31 18.25 15V14H19.38C21.38 14 23 12.38 23 10.38V11.62C23 9.62 21.38 8 19.38 8ZM18.25 12V10H19.38C20.28 10 21 10.72 21 11.62C21 12.52 20.28 13.25 19.38 13.25H18.25V12ZM15.25 6C15.8 6 16.25 6.45 16.25 7V15C16.25 17.21 14.46 19 12.25 19H8.25C6.04 19 4.25 17.21 4.25 15V7C4.25 6.45 4.7 6 5.25 6H15.25Z"
+                                fill="currentColor" />
+                            <path
+                                d="M14.25 8H6.25C5.7 8 5.25 8.45 5.25 9V14C5.25 14.55 5.7 15 6.25 15H14.25C14.8 15 15.25 14.55 15.25 14V9C15.25 8.45 14.8 8 14.25 8Z"
+                                fill="white" fill-opacity="0.8" />
+                        </svg>
+                        <span>Buy me a coffee</span>
                     </a>
                 </div>
             </section>
