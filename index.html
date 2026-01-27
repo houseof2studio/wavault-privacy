@@ -469,28 +469,21 @@
             background: linear-gradient(to bottom, transparent 0%, rgba(16, 185, 129, 0.03) 100%);
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            height: 280px;
-            /* Increased height for better visibility */
-            overflow: hidden;
         }
 
         .feature-img img {
             width: 100%;
-            /* Restored full width */
-            height: 100%;
-            /* Force height to match container */
-            object-fit: contain;
-            /* Ensure full image is visible */
-            object-position: bottom;
+            height: auto;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
-            box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
+            /* Revert shadow to original */
             transition: transform 0.5s var(--ease-spring);
         }
 
         .feature-card:hover .feature-img img {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
+            /* Revert hover transform */
         }
 
         /* --- Pricing --- */
