@@ -470,27 +470,27 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            height: 220px;
-            /* Fixed height for consistency */
+            height: 280px;
+            /* Increased height for better visibility */
             overflow: hidden;
         }
 
         .feature-img img {
-            width: 90%;
-            /* Reduced width as requested */
-            height: auto;
-            max-height: 100%;
+            width: 100%;
+            /* Restored full width */
+            height: 100%;
+            /* Force height to match container */
             object-fit: contain;
+            /* Ensure full image is visible */
             object-position: bottom;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
             box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
-            /* Enhanced shadow for depth */
             transition: transform 0.5s var(--ease-spring);
         }
 
         .feature-card:hover .feature-img img {
-            transform: translateY(-12px) scale(1.02);
+            transform: translateY(-8px) scale(1.02);
         }
 
         /* --- Pricing --- */
