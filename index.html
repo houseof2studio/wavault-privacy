@@ -511,6 +511,8 @@
             padding: 3rem 2.5rem;
             position: relative;
             transition: transform 0.3s var(--ease-smooth);
+            display: flex;
+            flex-direction: column;
         }
 
         .p-card:hover {
@@ -552,15 +554,19 @@
         .features-list {
             list-style: none;
             margin: 2.5rem 0;
+            flex-grow: 1;
+            /* Push button to bottom */
         }
 
         .features-list li {
             margin-bottom: 1.25rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            /* Align icon with first line of text */
             gap: 1rem;
             font-size: 1rem;
             color: var(--text-body);
+            line-height: 1.5;
         }
 
         .checkmark {
@@ -575,9 +581,17 @@
             font-size: 0.85rem;
             font-weight: 800;
             flex-shrink: 0;
+            margin-top: 0.1rem;
+            /* Visual alignment with text */
         }
 
-        /* --- Footer --- */
+        .p-card .btn {
+            margin-top: auto;
+            /* Ensure button stays at bottom */
+            width: 100%;
+            justify-content: center;
+        }
+
         footer {
             padding: 4rem 1.5rem;
             text-align: center;
