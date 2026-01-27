@@ -536,20 +536,42 @@
         }
 
         .price {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            /* Larger, more impactful */
             font-weight: 800;
             color: var(--text-heading);
             margin: 1.5rem 0;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.05em;
             line-height: 1;
+            display: flex;
+            align-items: flex-start;
+            /* Align currency to top */
+            justify-content: center;
+            /* Center the price block */
+            gap: 2px;
         }
 
-        .price span {
-            font-size: 1.1rem;
+        .price .currency {
+            font-size: 1.75rem;
+            /* Superscript effect */
+            font-weight: 600;
+            margin-top: 0.5rem;
+            /* Visual optical alignment */
+            color: var(--text-heading);
+        }
+
+        .price .period {
+            font-size: 1rem;
             color: var(--text-light);
             font-weight: 500;
             letter-spacing: normal;
+            align-self: flex-end;
+            /* Bottom align /mo */
+            margin-bottom: 0.75rem;
+            margin-left: 4px;
         }
+
+
 
         .features-list {
             list-style: none;
