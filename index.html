@@ -122,10 +122,10 @@
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
 
-            /* Living background mesh */
+            /* Living background mesh - Updated to Royal Indigo/Blue */
             background-image:
-                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(15, 118, 110, 0.1) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.05) 0px, transparent 50%);
             background-attachment: fixed;
         }
 
@@ -147,10 +147,13 @@
 
         h1 {
             font-size: clamp(2.5rem, 5vw, 5rem);
-            background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #7C3AED 100%);
+            /* Deep Blue -> Royal Blue -> Violet */
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
         }
 
         h2 {
@@ -526,7 +529,8 @@
             border: 2px solid transparent;
             background: linear-gradient(white, white) padding-box, var(--gradient-primary) border-box;
             /* Gradient Border */
-            box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.45);
+            /* Deep Royal Blue Shadow */
             order: 2;
             transform: scale(1.05);
             /* Pro is slightly bigger */
@@ -535,6 +539,8 @@
 
         .p-card.pro:hover {
             transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 35px 60px -15px rgba(37, 99, 235, 0.5);
+            /* Even deeper on hover */
         }
 
         .price {
@@ -1125,7 +1131,7 @@
                 <!-- Pro Tier (Highlighted) -->
                 <div class="p-card pro">
                     <div
-                        style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); color: white; padding: 6px 16px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);">
+                        style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); color: white; padding: 6px 16px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);">
                         MOST POPULAR</div>
                     <h3 class="accent-text">Monthly Pro</h3>
                     <div class="price">
