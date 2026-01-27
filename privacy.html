@@ -7,21 +7,27 @@
     <title>Privacy Policy — WaVault</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
+        /* --- Vitality Design System (Shared) --- */
         :root {
-            --bg: #FAFAF9;
-            --surface: #FFFFFF;
-            --text-main: #1C1C1A;
-            --text-muted: #52524E;
-            --primary: #6366F1;
-            --primary-bg: rgba(99, 102, 241, 0.08);
-            --border: #E7EDEF;
-            --success: #10B981;
-            --success-bg: rgba(16, 185, 129, 0.08);
+            --bg-page: #F8FAFC;
+            --gradient-primary: linear-gradient(135deg, #0F766E 0%, #10B981 100%);
+            --primary-solid: #0F766E;
+            --text-heading: #1E293B;
+            --text-body: #475569;
+            --text-subtle: #94A3B8;
+            --glass-surface: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --border: #E2E8F0;
+            --radius-xl: 24px;
+            --shadow-float: 0 20px 40px -5px rgba(15, 118, 110, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            --ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 
-            --max-width: 1100px;
-            --content-width: 680px;
+            --max-width: 1200px;
+            --content-width: 720px;
         }
 
         * {
@@ -35,31 +41,38 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-body);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(15, 118, 110, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
-        /* --- Header --- */
+        /* --- Navigation --- */
         nav {
             position: sticky;
             top: 0;
-            background: rgba(250, 250, 249, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
             z-index: 100;
-            height: 64px;
+            height: 80px;
             display: flex;
             align-items: center;
+            backdrop-filter: blur(12px);
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border);
         }
 
-        .nav-container {
+        .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            width: 100%;
             padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -68,28 +81,28 @@
         .logo {
             font-weight: 800;
             font-size: 1.25rem;
-            letter-spacing: -0.03em;
-            color: var(--text-main);
+            color: var(--text-heading);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            letter-spacing: -0.03em;
         }
 
         /* --- Layout --- */
         .wrapper {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 5rem 1.5rem;
             display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 4rem;
+            grid-template-columns: 260px 1fr;
+            gap: 5rem;
         }
 
-        /* --- Sidebar --- */
+        /* --- Sidebar TOC --- */
         aside {
             position: sticky;
-            top: 100px;
+            top: 120px;
             height: fit-content;
         }
 
@@ -98,7 +111,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--text-muted);
+            color: var(--text-subtle);
             margin-bottom: 1.5rem;
         }
 
@@ -110,16 +123,19 @@
         }
 
         .toc-link {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: var(--text-muted);
+            color: var(--text-body);
             text-decoration: none;
             transition: all 0.2s;
             display: block;
+            padding-left: 12px;
+            border-left: 2px solid transparent;
         }
 
         .toc-link:hover {
-            color: var(--primary);
+            color: var(--primary-solid);
+            border-left-color: var(--primary-solid);
             transform: translateX(4px);
         }
 
@@ -129,21 +145,33 @@
         }
 
         header {
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.35rem 0.85rem;
-            background-color: var(--success-bg);
-            color: var(--success);
+            padding: 0.4rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary-solid);
             border-radius: 99px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         h1 {
@@ -152,43 +180,40 @@
             font-weight: 800;
             letter-spacing: -0.04em;
             margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .meta {
-            font-size: 0.9375rem;
-            color: var(--text-muted);
+            font-size: 0.95rem;
+            color: var(--text-subtle);
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
+        /* --- Cards & Text --- */
         .philosophy-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 20px;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3.5rem;
+            box-shadow: var(--shadow-float);
         }
 
         .philosophy-card h2 {
-            font-size: 1.125rem;
-            color: var(--success);
-            border: none;
-            margin: 0 0 0.75rem 0;
-            padding: 0;
-            font-weight: 700;
+            margin-top: 0;
+            color: var(--primary-solid);
+            font-size: 1.25rem;
         }
 
-        .philosophy-card p {
-            font-size: 0.9375rem;
-            margin: 0;
-        }
-
-        /* --- Typography --- */
         h2 {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: -0.03em;
+            color: var(--text-heading);
             margin: 4rem 0 1.5rem;
             scroll-margin-top: 100px;
         }
@@ -196,71 +221,86 @@
         h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            margin: 2.5rem 0 1rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-heading);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-heading);
         }
 
         p,
-        ul,
-        ol {
-            font-size: 1.0625rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-muted);
+        li {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-body);
         }
 
         ul,
         ol {
             padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
         }
 
         li::marker {
-            color: var(--primary);
-        }
-
-        strong {
-            color: var(--text-main);
-            font-weight: 600;
+            color: var(--primary-solid);
         }
 
         code {
-            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
-            font-size: 0.85em;
-            background: rgba(99, 102, 241, 0.06);
-            color: var(--primary);
+            font-family: 'SF Mono', monospace;
+            font-size: 0.9em;
+            background: rgba(15, 23, 42, 0.05);
+            color: var(--text-heading);
             padding: 0.2rem 0.4rem;
             border-radius: 6px;
         }
 
         .highlight {
-            color: var(--text-main);
-            background: linear-gradient(120deg, var(--success-bg) 0%, var(--success-bg) 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.3em;
-            background-position: 0 88%;
+            color: var(--primary-solid);
             font-weight: 600;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0 4px;
+            border-radius: 4px;
         }
 
-        /* --- Global Footer --- */
+        a {
+            color: var(--primary-solid);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         .site-footer {
             border-top: 1px solid var(--border);
             padding: 4rem 0;
             margin-top: 6rem;
             text-align: center;
+            background: #F1F5F9;
         }
 
-        .site-footer p {
-            font-size: 0.875rem;
-            margin: 0;
+        .footer-logo {
+            opacity: 0.5;
+            margin-bottom: 1.5rem;
+            filter: grayscale(100%);
+            transition: opacity 0.2s;
         }
 
-        /* --- Media Queries --- */
+        .footer-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
         @media (max-width: 900px) {
             .wrapper {
                 grid-template-columns: 1fr;
                 padding-top: 2rem;
+                gap: 2rem;
             }
 
             aside {
@@ -271,39 +311,17 @@
                 font-size: 2.5rem;
             }
         }
-
-        @media print {
-
-            nav,
-            aside,
-            .site-footer {
-                display: none;
-            }
-
-            .wrapper {
-                display: block;
-                padding: 0;
-            }
-
-            body {
-                background: white;
-            }
-
-            h2 {
-                page-break-after: avoid;
-            }
-        }
     </style>
 </head>
 
 <body>
     <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="icon.svg" alt="WaVault Logo" style="width: 28px; height: 28px; border-radius: 6px;">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <img src="icon.svg" alt="WaVault Logo" style="width: 32px; border-radius: 8px;">
                 WaVault
             </a>
-            <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted)">Protocol 1.0</div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-subtle);">Using Protocol 1.0</div>
         </div>
     </nav>
 
@@ -312,10 +330,10 @@
             <div class="toc-title">On this page</div>
             <ul class="toc-list">
                 <li><a href="#intro" class="toc-link">Introduction</a></li>
-                <li><a href="#architecture" class="toc-link">Architecture</a></li>
+                <li><a href="#architecture" class="toc-link">Zero-Knowledge Architecture</a></li>
                 <li><a href="#collection" class="toc-link">Data Collection</a></li>
                 <li><a href="#permissions" class="toc-link">Permissions</a></li>
-                <li><a href="#third-parties" class="toc-link">Third Parties</a></li>
+                <li><a href="#third-parties" class="toc-link">Subprocessors</a></li>
                 <li><a href="#rights" class="toc-link">User Rights</a></li>
                 <li><a href="#security" class="toc-link">Security Standard</a></li>
             </ul>
@@ -324,11 +342,7 @@
         <main>
             <header>
                 <div class="badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                    Zero-Knowledge Protocol
+                    <span style="font-size: 1.2em; margin-right: 6px;">🛡️</span> Zero-Knowledge Protocol
                 </div>
                 <h1>Privacy Policy</h1>
                 <div class="meta">
@@ -339,7 +353,8 @@
 
             <div class="philosophy-card">
                 <h2>The Privacy Promise</h2>
-                <p>We adhere to a strict Zero-Knowledge architecture. This means WaVault is engineered so that we
+                <p style="margin: 0;">We adhere to a strict Zero-Knowledge architecture. This means WaVault is
+                    engineered so that we
                     technically <strong>cannot access your data</strong>, even if we were compelled to do so by a third
                     party.</p>
             </div>
@@ -411,17 +426,6 @@
                 </ol>
                 <p>When disabled, no analytics events are sent. Your preference is saved locally and persists across
                     browser sessions. Disabling analytics does not affect any core functionality.</p>
-
-                <h4>Third-Party Data Processor:</h4>
-                <ul>
-                    <li><strong>Service:</strong> Google Analytics 4 (Google LLC)</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy"
-                            style="color: var(--primary); text-decoration: underline;">https://policies.google.com/privacy</a>
-                    </li>
-                    <li><strong>Data Retention:</strong> 14 months (Google's default setting)</li>
-                    <li><strong>Legal Basis (GDPR):</strong> Legitimate interest (Article 6(1)(f)) - Product improvement
-                        and service optimization</li>
-                </ul>
             </section>
 
             <section id="permissions">
@@ -445,8 +449,8 @@
                     </li>
                     <li><strong>Creem (creem.io):</strong> Acts as our Merchant of Record. They handle all financial
                         transactions using PCI-compliant systems. We do not store credit card numbers.</li>
-                    <li><strong>Google Analytics 4 (Google LLC):</strong> Processes anonymous usage analytics to help us
-                        improve the product. You can opt out at any time via the in-app toggle (see Section 3.1).</li>
+                    <li><strong>Google Analytics 4 (Google LLC):</strong> Processes anonymous usage analytics. You can
+                        opt out at any time.</li>
                 </ul>
             </section>
 
@@ -481,11 +485,14 @@
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 WaVault. All rights reserved. Locally processed in your browser.</p>
-        <div class="footer-links" style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem;">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="terms.html" class="footer-link">Terms of Service</a>
-            <a href="refund.html" class="footer-link">Refund Policy</a>
+        <div class="container">
+            <img src="icon.svg" alt="WaVault" class="footer-logo" style="width: 48px; border-radius: 12px;">
+            <p>&copy; 2026 WaVault. All rights reserved. Locally processed in your browser.</p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem;">
+                <a href="index.html" style="color: var(--text-subtle);">Home</a>
+                <a href="terms.html" style="color: var(--text-subtle);">Terms</a>
+                <a href="refund.html" style="color: var(--text-subtle);">Refund Policy</a>
+            </div>
         </div>
     </footer>
 </body>
