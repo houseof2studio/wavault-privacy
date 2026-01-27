@@ -465,24 +465,32 @@
 
         .feature-img {
             margin-top: auto;
-            padding: 24px 24px 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(16, 185, 129, 0.05) 100%);
+            padding: 1.5rem 1.5rem 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(16, 185, 129, 0.03) 100%);
             display: flex;
             justify-content: center;
+            align-items: flex-end;
+            height: 220px;
+            /* Fixed height for consistency */
+            overflow: hidden;
         }
 
         .feature-img img {
-            width: 100%;
+            width: 90%;
+            /* Reduced width as requested */
             height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: bottom;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
-            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
-            /* Stronger shadow */
+            box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+            /* Enhanced shadow for depth */
             transition: transform 0.5s var(--ease-spring);
         }
 
         .feature-card:hover .feature-img img {
-            transform: translateY(-8px);
+            transform: translateY(-12px) scale(1.02);
         }
 
         /* --- Pricing --- */
