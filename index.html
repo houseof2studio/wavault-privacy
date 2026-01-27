@@ -4,92 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaVault — Professional WhatsApp CRM & Lead Manager</title>
+    <title>WaVault — The Privacy-First WhatsApp CRM</title>
     <meta name="description"
-        content="The privacy-first Chrome extension to manage, export, and organize WhatsApp leads directly from your browser. 100% Local data processing.">
+        content="Turn WhatsApp into a professional CRM. Export leads, manage contacts, and organize workflows without leaving your browser. 100% Local Privacy.">
+
+    <!-- Typography: Inter Variable -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=cal:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
     <style>
-        /* --- Design System: Flux/Zen Theme --- */
+        /* --- Zen V2 Design System --- */
         :root {
-            /* Palette */
-            --bg-base: #FAFAF9;
-            /* Warm Stone */
-            --bg-surface: #FFFFFF;
+            /* Semantics */
+            --bg-page: #F8FAFC;
+            /* Slate 50 */
+            --bg-surface: rgba(255, 255, 255, 0.85);
+            /* Glass */
+            --bg-surface-opaque: #FFFFFF;
+
             --primary: #4F46E5;
             /* Indigo 600 */
+            --primary-glow: rgba(79, 70, 229, 0.4);
             --primary-dark: #4338CA;
-            --primary-light: #EEF2FF;
-            --text-main: #111827;
-            /* Gray 900 */
-            --text-muted: #6B7280;
-            /* Gray 500 */
-            --border: #E5E7EB;
-            --accent: #F59E0B;
-            /* Amber 500 */
 
-            /* Spacing */
-            --container: 1100px;
-            --header-h: 70px;
+            --text-heading: #0F172A;
+            /* Slate 900 */
+            --text-body: #475569;
+            /* Slate 600 */
+            --text-light: #94A3B8;
 
-            /* Radius */
-            --radius-lg: 20px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
+            --border: #E2E8F0;
+            /* Slate 200 */
+            --border-hover: #CBD5E1;
+
+            --radius-xl: 24px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 80px -20px var(--primary-glow);
         }
 
-        /* --- Reset & Base --- */
+        /* --- Base & Reset --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
+            background-color: var(--bg-page);
+            color: var(--text-body);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            /* Dot Pattern Background */
+            background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
+            background-size: 32px 32px;
         }
 
         a {
             text-decoration: none;
             color: inherit;
-            transition: opacity 0.2s;
-        }
-
-        a:hover {
-            opacity: 0.8;
+            transition: all 0.2s ease;
         }
 
         /* --- Typography --- */
         h1,
         h2,
-        h3,
-        h4 {
-            letter-spacing: -0.03em;
-            line-height: 1.2;
+        h3 {
+            color: var(--text-heading);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--text-main);
+            font-size: clamp(2.5rem, 5vw, 4rem);
         }
 
         h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 3rem);
         }
 
         h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            letter-spacing: -0.01em;
         }
 
         .text-gradient {
@@ -100,25 +111,83 @@
         }
 
         .container {
-            max-width: var(--container);
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* --- Header --- */
-        nav {
-            height: var(--header-h);
-            position: sticky;
-            top: 0;
-            background: rgba(250, 250, 249, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            display: flex;
+        /* --- Components --- */
+        .btn {
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
-        .nav-content {
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-heading);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-light);
+            background: #F8FAFC;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.875rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-body);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .badge span {
+            color: var(--primary);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -128,415 +197,428 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.75rem;
             font-weight: 700;
             font-size: 1.25rem;
+            color: var(--text-heading);
         }
 
         .logo img {
-            width: 32px;
-            height: 32px;
+            width: 36px;
             border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            font-size: 0.95rem;
+            gap: 2.5rem;
             font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.2s;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            background: var(--primary-dark);
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         /* --- Hero --- */
-        .hero {
-            padding: 5rem 0 3rem;
+        header {
+            padding: 6rem 0 4rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 99px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+            z-index: -1;
+            pointer-events: none;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 1.5rem auto 2.5rem;
+        .hero-img-wrapper {
+            margin-top: 4rem;
+            position: relative;
+            border-radius: var(--radius-xl);
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
         }
 
-        /* --- Grid Features --- */
-        .features {
-            padding: 4rem 0;
+        .hero-img-inner {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
         }
 
-        .grid {
+        /* --- Bento Grid --- */
+        .bento-section {
+            padding: 6rem 0;
+        }
+
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
         }
 
-        .card {
-            background: var(--bg-surface);
+        .bento-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
             padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
-        }
-
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 12px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+            overflow: hidden;
         }
 
-        /* --- Pricing --- */
-        .pricing-section {
-            background: white;
-            padding: 6rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl);
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 4rem;
+        .bento-text {
+            margin-bottom: 2rem;
         }
 
-        .price-card {
-            background: var(--bg-base);
-            border-radius: 24px;
-            padding: 2.5rem;
-            border: 1px solid var(--border);
-            position: relative;
+        .bento-text h3 {
+            margin-bottom: 0.5rem;
         }
 
-        .price-card.popular {
-            background: white;
-            border: 2px solid var(--primary);
-            box-shadow: 0 20px 40px -12px rgba(79, 70, 229, 0.15);
-        }
-
-        .price-amount {
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 1.5rem 0;
-            color: var(--text-main);
-            letter-spacing: -0.05em;
-        }
-
-        .price-period {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            letter-spacing: normal;
-        }
-
-        .check-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .check-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
+        .bento-text p {
             font-size: 1rem;
+            color: var(--text-body);
         }
 
-        .check-icon {
-            color: #10B981;
-            flex-shrink: 0;
+        .bento-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-top: auto;
         }
 
-        /* --- Compliance Footer --- */
-        footer {
-            background: white;
-            padding: 4rem 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-align: center;
+        /* Span adjustments for interest */
+        .span-2 {
+            grid-column: span 2;
         }
 
-        .compliance-text {
-            max-width: 600px;
-            margin: 1rem auto;
-            font-size: 0.8rem;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            .span-2 {
+                grid-column: auto;
             }
 
             .nav-links {
                 display: none;
             }
         }
+
+        /* --- Pricing --- */
+        .pricing {
+            padding: 6rem 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-cards {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .p-card {
+            flex: 1;
+            min-width: 320px;
+            max-width: 400px;
+            background: var(--bg-page);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .p-card.pro {
+            background: white;
+            border: 2px solid var(--primary);
+            box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.1);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-body);
+            font-weight: 500;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            opacity: 0.5;
+            margin-bottom: 2rem;
+            filter: grayscale(100%);
+        }
+
+        .footer-nav {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .legal-text {
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <nav>
-        <div class="container nav-content">
+        <div class="container nav-inner">
             <a href="#" class="logo">
-                <img src="icon.svg" alt="WaVault">
+                <img src="icon.svg" alt="WaVault Logo">
                 WaVault
             </a>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#privacy">Privacy</a>
+                <a href="#features">Capabilities</a>
+                <a href="#privacy">Privacy First</a>
                 <a href="#pricing">Pricing</a>
                 <a href="mailto:houseof2studio@gmail.com">Support</a>
             </div>
-            <a href="#pricing" class="btn btn-primary">Get Started</a>
+            <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+                Add to Chrome
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <span class="hero-badge">New: Enterprise Export Formats 🚀</span>
-            <h1>
-                Turn WhatsApp into your<br>
-                <span class="text-gradient">Professional CRM Engine</span>
-            </h1>
-            <p>
-                The privacy-first Chrome Extension for sales professionals. Manage leads, export contacts, and organize
-                workflow without leaving your browser.
-                <br><strong>0% Cloud Storage. 100% Local.</strong>
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
-                <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
-                    target="_blank" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Add to Chrome
-                    - It's Free</a>
-                <a href="#features" class="btn" style="background: white; border: 1px solid var(--border);">Learn
-                    More</a>
-            </div>
-            <!-- Hero Image Area -->
-            <div
-                style="margin: 0 auto; max-width: 1000px; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 1px solid var(--border);">
-                <img src="hero-shot.png" alt="WaVault Dashboard" style="width: 100%; height: auto; display: block;">
+    <header class="container">
+        <div class="badge">
+            <span>New</span> Enterprise-Grade Data Export
+        </div>
+
+        <h1>
+            Your WhatsApp Needs a <br>
+            <span class="text-gradient">Professional Upgrade</span>
+        </h1>
+
+        <p style="max-width: 650px; margin: 1.5rem auto 2.5rem;">
+            Stop copying numbers manually. WaVault is the <strong>privacy-first</strong> Chrome Extension that turns
+            your web browser into a localized CRM powerhouse.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                target="_blank" class="btn btn-primary">
+                Install for Free
+            </a>
+            <a href="#features" class="btn btn-secondary">
+                View Features
+            </a>
+        </div>
+
+        <div class="hero-img-wrapper">
+            <div class="hero-img-inner">
+                <img src="hero-shot.png" alt="WaVault Dashboard Interface"
+                    style="width: 100%; height: auto; display: block;">
             </div>
         </div>
+
+        <p
+            style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+            Trusted by modern sales teams
+        </p>
     </header>
 
-    <!-- Product Gallery -->
-    <section class="gallery" style="background: white; padding: 4rem 0; border-bottom: 1px solid var(--border);">
-        <div class="container">
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div
-                    style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid var(--border);">
-                    <img src="feature-1.png" alt="Feature Preview 1" style="width: 100%; height: auto; display: block;">
-                </div>
-                <div
-                    style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid var(--border);">
-                    <img src="feature-2.png" alt="Feature Preview 2" style="width: 100%; height: auto; display: block;">
-                </div>
-                <div
-                    style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid var(--border);">
-                    <img src="feature-3.png" alt="Feature Preview 3" style="width: 100%; height: auto; display: block;">
-                </div>
-            </div>
+    <section id="features" class="bento-section container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="margin-bottom: 1rem;">Engineered for <span class="text-gradient">Efficiency</span></h2>
+            <p>Everything runs locally on your machine. No cloud delays. No data leaks.</p>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2>Everything you need to <span class="text-gradient">Close Deals</span></h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto;">Built for high-volume sales
-                    teams, recruiters, and real estate professionals.</p>
+        <div class="bento-grid">
+            <!-- Card 1: Large Span -->
+            <div class="bento-card span-2">
+                <div class="bento-text">
+                    <h3>Smart Bulk Export</h3>
+                    <p>Extract leads from groups, chats, and labels instantly. Filters business accounts from personal
+                        ones automatically.</p>
+                </div>
+                <div class="bento-img">
+                    <img src="feature-1.png" alt="Bulk Export Interface" style="width: 100%; display: block;">
+                </div>
             </div>
 
-            <div class="grid">
-                <!-- Feature 1 -->
-                <div class="card">
-                    <div class="icon-box">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                    </div>
-                    <h3>Bulk Lead Export</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text-muted);">One-click export of unsaved numbers from
-                        groups and chats to Excel or CSV. Perfect for CRM uploads.</p>
+            <!-- Card 2: Vertical -->
+            <div class="bento-card">
+                <div class="bento-text">
+                    <h3>Tag & Organize</h3>
+                    <p>Apply custom labels (CRM style) directly within WhatsApp Web.</p>
                 </div>
-                <!-- Feature 2 -->
-                <div class="card">
-                    <div class="icon-box">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                    </div>
-                    <h3>Smart Organization</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text-muted);">Auto-label contacts, add notes, and filter
-                        by country code or interaction status instantly.</p>
+                <div class="bento-img">
+                    <img src="feature-2.png" alt="Tagging System" style="width: 100%; display: block;">
                 </div>
-                <!-- Feature 3 -->
-                <div class="card">
-                    <div class="icon-box">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
+            </div>
+
+            <!-- Card 3: Reverse Layout -->
+            <div class="bento-card">
+                <div class="bento-text">
                     <h3>Quick Actions</h3>
-                    <p style="margin-top: 0.5rem; color: var(--text-muted);">Send messages to unsaved numbers
-                        immediately. No more adding contacts to your phone address book.</p>
+                    <p>Message unsaved numbers instantly without clogging your phone book.</p>
+                </div>
+                <div class="bento-img">
+                    <img src="feature-3.png" alt="Quick Actions" style="width: 100%; display: block;">
+                </div>
+            </div>
+
+            <!-- Card 4: Text Only -->
+            <div class="bento-card span-2"
+                style="justify-content: center; background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%); color: white; border: none;">
+                <div style="text-align: center;">
+                    <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem;">100% Local Processing</h3>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 500px; margin: 0 auto;">
+                        Your contacts never touch our servers. We use a "Local-First" architecture that keeps your
+                        business data strictly on your device.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
+    <section id="pricing" class="pricing">
         <div class="container">
             <div style="text-align: center;">
-                <h2>Transparent Pricing</h2>
-                <p style="color: var(--text-muted);">No hidden fees. Cancel anytime. Secure payments via Stripe.</p>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Start for free. Upgrade when you scale.</p>
             </div>
 
-            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-
+            <div class="pricing-cards">
                 <!-- Free Tier -->
-                <div class="price-card">
+                <div class="p-card">
                     <h3>Starter</h3>
-                    <div class="price-amount">$0<span class="price-period">/forever</span></div>
-                    <p>Essential export tools.</p>
-                    <ul class="check-list">
-                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Saved Contacts Export</li>
-                        <li><span class="check-icon">✓</span> Basic Label Management</li>
-                        <li><span class="check-icon">✓</span> Export to CSV/Excel</li>
-                        <li><span class="check-icon">✓</span> Local Data Privacy</li>
+                    <div class="price">$0<span> / forever</span></div>
+                    <p>Essential tools for freelancers.</p>
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> Export Saved Contacts</li>
+                        <li><span class="checkmark">✓</span> Basic Labeling</li>
+                        <li><span class="checkmark">✓</span> CSV & Excel Download</li>
+                        <li><span class="checkmark">✓</span> Privacy Blurring</li>
                     </ul>
                     <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
-                        target="_blank" class="btn" style="width: 100%; border: 1px solid var(--border);">Install
-                        Free</a>
+                        target="_blank" class="btn btn-secondary" style="width: 100%;">Install Free</a>
+                </div>
+
+                <!-- Pro Tier -->
+                <div class="p-card pro">
+                    <div
+                        style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
+                        MOST POPULAR</div>
+                    <h3 style="color: var(--primary);">Monthly Pro</h3>
+                    <div class="price">$5.99<span> / mo</span></div>
+                    <p>For power users & sales teams.</p>
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> <strong>Unlimited</strong> Unsaved Exports</li>
+                        <li><span class="checkmark">✓</span> Export from Groups</li>
+                        <li><span class="checkmark">✓</span> Priority Support</li>
+                        <li><span class="checkmark">✓</span> 3-Day Refund Guarantee</li>
+                    </ul>
+                    <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                        target="_blank" class="btn btn-primary" style="width: 100%;">Start Pro Selection</a>
                 </div>
 
                 <!-- Day Pass -->
-                <div class="price-card">
+                <div class="p-card">
                     <h3>Day Pass</h3>
-                    <div class="price-amount">$1.99<span class="price-period">/24h</span></div>
-                    <p>For quick one-off projects.</p>
-                    <ul class="check-list">
-                        <li><span class="check-icon">✓</span> 24-hours Full Access</li>
-                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Unsaved Export</li>
-                        <li><span class="check-icon">✓</span> No Account Required</li>
-                        <li><span class="check-icon">✓</span> No Auto-Renewal</li>
+                    <div class="price">$1.99<span> / 24h</span></div>
+                    <p>For one-off bulk projects.</p>
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> 24h Full Access</li>
+                        <li><span class="checkmark">✓</span> Unlimited Exports</li>
+                        <li><span class="checkmark">✓</span> No Subscription</li>
+                        <li><span class="checkmark">✓</span> No Auto-Renewal</li>
                     </ul>
                     <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
-                        target="_blank" class="btn" style="width: 100%; border: 1px solid var(--border);">Get Day
-                        Pass</a>
-                </div>
-
-                <!-- Monthly Pro -->
-                <div class="price-card popular">
-                    <div
-                        style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">
-                        MOST POPULAR</div>
-                    <h3 style="color: var(--primary);">Monthly Pro</h3>
-                    <div class="price-amount">$5.99<span class="price-period">/mo</span></div>
-                    <p>For professional sales teams.</p>
-                    <ul class="check-list">
-                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Everything</li>
-                        <li><span class="check-icon">✓</span> Priority Email Support</li>
-                        <li><span class="check-icon">✓</span> Advanced Filtering</li>
-                        <li><span class="check-icon">✓</span> 3-Day Money-Back Guarantee</li>
-                    </ul>
-                    <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
-                        target="_blank" class="btn btn-primary" style="width: 100%;">Start Pro Trial</a>
+                        target="_blank" class="btn btn-secondary" style="width: 100%;">Get Day Pass</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compliance Footer -->
     <footer>
         <div class="container">
-            <div style="margin-bottom: 2rem;">
-                <img src="icon.svg" alt="WaVault" style="width: 40px; border-radius: 10px; margin-bottom: 1rem;">
-                <p>&copy; 2026 WaVault. All rights reserved.</p>
+            <img src="icon.svg" alt="WaVault"
+                style="width: 48px; border-radius: 12px; opacity: 0.8; margin-bottom: 2rem;">
+
+            <div class="legal-text">
+                WaVault is an independent browser extension and is not affiliated with, endorsed by, or sponsored by
+                WhatsApp Inc. or Meta Platforms, Inc. WhatsApp™ is a trademark of Meta Platforms, Inc.
             </div>
+
+            <p><strong>Support:</strong> <a href="mailto:houseof2studio@gmail.com"
+                    style="color: var(--primary);">houseof2studio@gmail.com</a></p>
 
             <div class="footer-nav">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="refund.html">Refund Policy</a>
-                <a href="https://hitesh239.github.io/wavault-docs/">Docs</a>
             </div>
 
-            <div class="compliance-text">
-                WaVault is an independent browser extension and is not affiliated with, endorsed by, or sponsored by
-                WhatsApp Inc. or Meta Platforms, Inc. WhatsApp™ is a trademark of Meta Platforms, Inc.
-            </div>
-
-            <div style="margin-top: 1.5rem;">
-                <strong style="color: var(--text-main);">Support:</strong> <a href="mailto:houseof2studio@gmail.com"
-                    style="color: var(--primary);">houseof2studio@gmail.com</a>
-            </div>
+            <p style="opacity: 0.4; font-size: 0.8rem;">&copy; 2026 WaVault. All rights reserved.</p>
         </div>
     </footer>
 
