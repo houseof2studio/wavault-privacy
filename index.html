@@ -265,9 +265,9 @@
 
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* Force 3 columns standard */
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2x2 Grid for 4 items */
+            gap: 2.5rem;
             margin-top: 4rem;
         }
 
@@ -279,7 +279,7 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            height: 100%;
+            /* Removed height:100% to allow auto-growth */
         }
 
         .bento-card:hover {
@@ -289,7 +289,7 @@
         }
 
         .bento-text {
-            padding: 2.5rem 2rem 1.5rem;
+            padding: 2rem 2rem 1.5rem;
         }
 
         .bento-text h3 {
@@ -309,17 +309,17 @@
             background: #F1F5F9;
             padding: 24px 24px 0;
             border-top: 1px solid var(--border);
-            height: 480px;
-            overflow: hidden;
+            /* REMOVED FIXED HEIGHT so full image shows */
+            min-height: 400px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
         }
 
         .bento-img-wrapper img {
-            width: 85%;
-            max-width: 280px;
-            /* CRITICAL ADDITION */
+            width: 100%;
+            max-width: 250px;
+            /* Constrain width to reasonable phone size */
             height: auto;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
@@ -327,6 +327,8 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             border-bottom: none;
             transition: transform 0.3s ease;
+            margin-bottom: -4px;
+            /* Fix gap */
         }
 
         .bento-card:hover .bento-img-wrapper img {
@@ -439,25 +441,17 @@
             font-size: 0.8rem;
         }
 
-        @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
             .nav-links {
                 display: none;
             }
 
             h1 {
                 font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -530,38 +524,54 @@
                     machine. No cloud delays. No data leaks.</p>
             </div>
 
+            <!-- 2x2 Grid for 4 Feature Images -->
             <div class="bento-grid">
-                <!-- Card 1 -->
+
+                <!-- Card 1: Group Export -->
                 <div class="bento-card">
                     <div class="bento-text">
-                        <h3>Smart Bulk Export</h3>
-                        <p>Extract leads from groups, chats, and labels instantly. Filters business accounts from
-                            personal ones automatically.</p>
+                        <h3>Bulk Group Export</h3>
+                        <p>Instantly extract all contacts from any WhatsApp group. Automatically filters out duplicates
+                            and admins.</p>
                     </div>
                     <div class="bento-img-wrapper">
-                        <img src="feature-1.png" alt="Bulk Export Interface">
+                        <img src="feature-group.png" alt="Bulk Group Export Interface">
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: Direct Chat -->
                 <div class="bento-card">
                     <div class="bento-text">
-                        <h3>Tag & Organize</h3>
-                        <p>Apply custom labels (CRM style) directly within WhatsApp Web.</p>
+                        <h3>Direct Chat</h3>
+                        <p>Start chats with unsaved numbers immediately. Just enter the number and click send—no
+                            phonebook clutter.</p>
                     </div>
                     <div class="bento-img-wrapper">
-                        <img src="feature-2.png" alt="Tagging System">
+                        <img src="feature-direct.png" alt="Direct Chat Interface">
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: Saved Contacts -->
                 <div class="bento-card">
                     <div class="bento-text">
-                        <h3>Quick Actions</h3>
-                        <p>Message unsaved numbers instantly without clogging your phone book.</p>
+                        <h3>Saved Contacts Export</h3>
+                        <p>Backup everyone you know. Export your entire contact list with names and numbers to secure
+                            CSV files.</p>
                     </div>
                     <div class="bento-img-wrapper">
-                        <img src="feature-3.png" alt="Quick Actions">
+                        <img src="feature-saved.png" alt="Saved Contacts Export Interface">
+                    </div>
+                </div>
+
+                <!-- Card 4: Formats -->
+                <div class="bento-card">
+                    <div class="bento-text">
+                        <h3>Pro Export Formats</h3>
+                        <p>Choose your format: Excel (XLSX), CSV, or VCF. Compatible with Salesforce, HubSpot, and
+                            Google Contacts.</p>
+                    </div>
+                    <div class="bento-img-wrapper">
+                        <img src="feature-formats.png" alt="Supported Formats Interface">
                     </div>
                 </div>
             </div>
