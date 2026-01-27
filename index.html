@@ -643,6 +643,131 @@
                 margin-top: 3rem;
             }
         }
+
+        /* --- Trust Strip --- */
+        .trust-strip {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .trust-item span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #F0FDF4;
+            color: #059669;
+            border-radius: 50%;
+            font-size: 1.1rem;
+        }
+
+        /* --- Security Section --- */
+        .security-section {
+            padding: 8rem 0;
+            background: #F8FAFC;
+            position: relative;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .security-visual {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-float);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- FAQ Accordion --- */
+        .faq-section {
+            padding: 6rem 0;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        details:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        summary {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-heading);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-subtle);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details p {
+            margin-top: 1rem;
+            color: var(--text-body);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile tweaks for new sections */
+        @media (max-width: 900px) {
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-strip {
+                gap: 2rem;
+                padding: 1.5rem 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -658,7 +783,7 @@
                 <a href="#features">Features</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="#pricing">Pricing</a>
-                <a href="mailto:houseof2studio@gmail.com">Support</a>
+                <a href="#faq">FAQ</a>
             </div>
             <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
                 target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">
@@ -699,6 +824,22 @@
             </div>
         </div>
     </header>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+        <div class="trust-item">
+            <span>🛡️</span> Chrome Verified
+        </div>
+        <div class="trust-item">
+            <span>🔒</span> AES-256 Encryption
+        </div>
+        <div class="trust-item">
+            <span>⚡</span> 100% Local Processing
+        </div>
+        <div class="trust-item">
+            <span>🚫</span> No Tracking
+        </div>
+    </div>
 
     <section id="features" class="carousel-section">
         <div class="container" style="margin-bottom: 3rem; text-align: center;">
@@ -761,6 +902,49 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- Security Deep Dive -->
+    <section class="security-section">
+        <div class="container security-grid">
+            <div>
+                <div class="badge"><span></span> Zero-Knowledge Architecture</div>
+                <h2>Your Data Needs a <br><span class="accent-text">Firewall</span></h2>
+                <p style="margin-top: 1.5rem; color: var(--text-body);">
+                    Most extensions upload your contacts to their servers. <strong>We don't.</strong>
+                    WaVault operates entirely within your browser's local sandbox.
+                </p>
+                <ul class="features-list">
+                    <li><span class="checkmark">✓</span> <strong>Local Storage Only:</strong> Data never leaves your
+                        machine.</li>
+                    <li><span class="checkmark">✓</span> <strong>Direct Export:</strong> WhatsApp → CSV (No Middleman).
+                    </li>
+                    <li><span class="checkmark">✓</span> <strong>Auditable Code:</strong> Verify our manifest
+                        permissions.</li>
+                </ul>
+                <a href="privacy.html" class="btn btn-secondary">Read Security Docs</a>
+            </div>
+            <div class="security-visual">
+                <div style="text-align: center;">
+                    <img src="https://fonts.gstatic.com/s/i/materialicons/security/v12/24px.svg"
+                        style="width: 64px; opacity: 0.2; margin-bottom: 1rem;">
+                    <h3>The Privacy Wall</h3>
+                    <div
+                        style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 2rem;">
+                        <div
+                            style="padding: 1rem; border: 1px solid var(--border); border-radius: 12px; background: #F1F5F9;">
+                            Chrome
+                        </div>
+                        <div style="color: #EF4444; font-weight: 800;">||| BLOCKED |||</div>
+                        <div style="padding: 1rem; border: 1px solid var(--border); border-radius: 12px; opacity: 0.5;">
+                            Internet
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="pricing" class="pricing">
         <div class="container">
             <div style="text-align: center;">
@@ -817,6 +1001,44 @@
                         target="_blank" class="btn btn-secondary" style="width: 100%;">Get Day Pass</a>
                 </div>
             </div>
+
+            <!-- Money Back Guarantee -->
+            <div style="margin-top: 4rem; text-align: center; opacity: 0.8; font-size: 0.95rem;">
+                <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    🛡️ <strong>3-Day Money-Back Guarantee.</strong> No questions asked.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container faq-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Common Questions</h2>
+
+            <details open>
+                <summary>Is my data reliable and safe?</summary>
+                <p>Yes. WaVault is a "Zero-Knowledge" extension. We do not have servers, and we never see your contacts.
+                    All processing happens locally on your computer inside the Chrome browser.</p>
+            </details>
+
+            <details>
+                <summary>Can I export contacts from groups?</summary>
+                <p>Absolutely. The "Bulk Group Export" feature allows you to open any WhatsApp group and download the
+                    entire participant list to Excel or CSV in seconds.</p>
+            </details>
+
+            <details>
+                <summary>Do I need to pay for the basic features?</summary>
+                <p>No. The "Starter" plan is free forever and allows you to backup your saved contacts. The Pro plan is
+                    for power users who need to export unsaved numbers and groups.</p>
+            </details>
+
+            <details>
+                <summary>How do I cancel my subscription?</summary>
+                <p>You can cancel anytime directly from the extension settings or by emailing support. You will retain
+                    access until the end of your billing period.</p>
+            </details>
         </div>
     </section>
 
