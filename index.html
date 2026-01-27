@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — WaVault</title>
+    <title>Features & Capabilities — WaVault</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +19,8 @@
             --border: #E7EDEF;
             --success: #10B981;
             --success-bg: rgba(16, 185, 129, 0.08);
+            --accent: #F59E0B;
+            --accent-bg: rgba(245, 158, 11, 0.08);
 
             --max-width: 1100px;
             --content-width: 680px;
@@ -123,6 +125,24 @@
             transform: translateX(4px);
         }
 
+        .toc-link.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* --- Featured Elements --- */
+        .feature-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
         /* --- Main Content --- */
         main {
             max-width: var(--content-width);
@@ -137,8 +157,8 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.35rem 0.85rem;
-            background-color: var(--success-bg);
-            color: var(--success);
+            background-color: var(--primary-bg);
+            color: var(--primary);
             border-radius: 99px;
             font-size: 0.75rem;
             font-weight: 700;
@@ -161,26 +181,27 @@
             gap: 1.5rem;
         }
 
-        .philosophy-card {
+        .spotlight-card {
             background: white;
             border: 1px solid var(--border);
             padding: 2rem;
             border-radius: 20px;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
         }
 
-        .philosophy-card h2 {
+        .spotlight-card h2 {
             font-size: 1.125rem;
-            color: var(--success);
+            color: var(--primary);
             border: none;
             margin: 0 0 0.75rem 0;
             padding: 0;
             font-weight: 700;
         }
 
-        .philosophy-card p {
+        .spotlight-card p {
             font-size: 0.9375rem;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -189,14 +210,16 @@
             font-size: 1.75rem;
             font-weight: 800;
             letter-spacing: -0.03em;
-            margin: 4rem 0 1.5rem;
+            margin: 4.5rem 0 1.75rem;
             scroll-margin-top: 100px;
+            color: var(--text-main);
         }
 
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
+            color: var(--text-main);
         }
 
         p,
@@ -209,51 +232,149 @@
 
         ul,
         ol {
-            padding-left: 1.5rem;
+            padding-left: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         li {
             margin-bottom: 0.75rem;
+            position: relative;
         }
 
-        li::marker {
-            color: var(--primary);
-        }
-
-        strong {
+        li strong {
             color: var(--text-main);
             font-weight: 600;
         }
 
-        code {
-            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
-            font-size: 0.85em;
-            background: rgba(99, 102, 241, 0.06);
-            color: var(--primary);
-            padding: 0.2rem 0.4rem;
-            border-radius: 6px;
-        }
-
         .highlight {
             color: var(--text-main);
-            background: linear-gradient(120deg, var(--success-bg) 0%, var(--success-bg) 100%);
+            background: linear-gradient(120deg, var(--primary-bg) 0%, var(--primary-bg) 100%);
             background-repeat: no-repeat;
             background-size: 100% 0.3em;
             background-position: 0 88%;
             font-weight: 600;
         }
 
+        .pro-tip {
+            background: var(--accent-bg);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9375rem;
+            color: var(--text-main);
+            border-left: 3px solid var(--accent);
+        }
+
+        .pro-tip strong {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .kbd {
+            display: inline-block;
+            padding: 2px 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: normal;
+            color: var(--text-main);
+            background-color: #fcfcfc;
+            border: solid 1px var(--border);
+            border-bottom: solid 2px var(--border);
+            border-radius: 4px;
+            margin: 0 2px;
+        }
+
+        /* --- BMC Support Card (MD3-Lite Refined) --- */
+        .bmc-card {
+            background: linear-gradient(145deg, #FFFFFF 0%, #F9FAFB 100%);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 6rem 0;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bmc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0.6;
+        }
+
+        .bmc-card h2 {
+            margin: 0 0 1rem;
+            color: var(--text-main);
+            font-size: 1.75rem;
+            border: none;
+            padding: 0;
+        }
+
+        .bmc-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .bmc-btn {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
+
+        .bmc-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .bmc-btn img {
+            height: 48px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
         /* --- Global Footer --- */
         .site-footer {
             border-top: 1px solid var(--border);
             padding: 4rem 0;
-            margin-top: 6rem;
+            margin-top: 8rem;
             text-align: center;
         }
 
         .site-footer p {
             font-size: 0.875rem;
             margin: 0;
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.1s;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
         }
 
         /* --- Media Queries --- */
@@ -269,28 +390,6 @@
 
             h1 {
                 font-size: 2.5rem;
-            }
-        }
-
-        @media print {
-
-            nav,
-            aside,
-            .site-footer {
-                display: none;
-            }
-
-            .wrapper {
-                display: block;
-                padding: 0;
-            }
-
-            body {
-                background: white;
-            }
-
-            h2 {
-                page-break-after: avoid;
             }
         }
     </style>
@@ -311,13 +410,16 @@
         <aside>
             <div class="toc-title">On this page</div>
             <ul class="toc-list">
-                <li><a href="#intro" class="toc-link">Introduction</a></li>
-                <li><a href="#architecture" class="toc-link">Architecture</a></li>
-                <li><a href="#collection" class="toc-link">Data Collection</a></li>
-                <li><a href="#permissions" class="toc-link">Permissions</a></li>
-                <li><a href="#third-parties" class="toc-link">Third Parties</a></li>
-                <li><a href="#rights" class="toc-link">User Rights</a></li>
-                <li><a href="#security" class="toc-link">Security Standard</a></li>
+                <li><a href="#messaging" class="toc-link">Direct Messaging</a></li>
+                <li><a href="#intelligence" class="toc-link">Lead Discovery</a></li>
+                <li><a href="#metadata" class="toc-link">Metadata extraction</a></li>
+                <li><a href="#geography" class="toc-link">Global Targeting</a></li>
+                <li><a href="#selection" class="toc-link">Selection Flow</a></li>
+                <li><a href="#exports" class="toc-link">CRM Vault</a></li>
+                <li><a href="#panel" class="toc-link">Side Panel Utility</a></li>
+                <li><a href="#free" class="toc-link">Unlimited Access</a></li>
+                <li><a href="#privacy" class="toc-link">Zen Stealth</a></li>
+                <li><a href="#support" class="toc-link">Support Project</a></li>
             </ul>
         </aside>
 
@@ -328,161 +430,265 @@
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
-                    Zero-Knowledge Protocol
+                    Enterprise Standard
                 </div>
-                <h1>Privacy Policy</h1>
+                <h1>Features & Capabilities</h1>
                 <div class="meta">
-                    <div>Updated: January 21, 2026</div>
+                    <div>Professional Sales Utility</div>
                     <div>Version: 1.0.8</div>
                 </div>
             </header>
 
-            <div class="philosophy-card">
-                <h2>The Privacy Promise</h2>
-                <p>We adhere to a strict Zero-Knowledge architecture. This means WaVault is engineered so that we
-                    technically <strong>cannot access your data</strong>, even if we were compelled to do so by a third
-                    party.</p>
+            <div class="spotlight-card">
+                <h2>Lead Utility Architecture</h2>
+                <p>WaVault is engineered to bridge the gap between your browser and your professional CRM. We focus on
+                    <span class="highlight">eliminating friction</span> and safeguarding your leads through local,
+                    high-speed lead extraction.
+                </p>
             </div>
 
-            <section id="intro">
-                <h2>1. Introduction and Scope</h2>
-                <p>WaVault ("The Extension") is a professional browser utility designed to help users structure and
-                    organize their locally available communication data. This policy defines the mathematical and
-                    technical boundaries that protect your information.</p>
-            </section>
+            <section id="messaging">
+                <h2>1. Direct Messaging Logic</h2>
+                <p>Scale your outreach without the technical debt of a cluttered contact book. WaVault transforms how
+                    you interact with numbers in the wild.</p>
 
-            <section id="architecture">
-                <h2>2. Zero-Knowledge Architecture</h2>
-                <p>Unlike traditional cloud-based software that uploads "blobs" of user data to a central server,
-                    WaVault operates entirely within your browser's <strong>Local Runtime Environment</strong>.</p>
+                <h3>Magic Context Launcher</h3>
+                <p>Access a direct bridge to WhatsApp from any professional website. Stop the cycle of manual data
+                    entry.</p>
                 <ul>
-                    <li><strong>Memory-Only Extraction:</strong> Data derived from the WhatsApp Web interface is
-                        processed in high-speed runtime memory (RAM) using a compiled Rust worker.</li>
-                    <li><strong>Isolated Storage:</strong> Your data stays in the <code>chrome.storage.local</code>
-                        area. We have no backend API that periodically "phones home" with your contact lists.</li>
-                    <li><strong>WASM Sandbox:</strong> All logic is executed in a WebAssembly sandbox, heavily
-                        restricted from making unauthorized network requests.</li>
-                </ul>
-            </section>
-
-            <section id="collection">
-                <h2>3. Data Collection</h2>
-                <p>We follow the principle of <span class="highlight">Data Minimization</span>. We only collect what is
-                    strictly necessary to maintain your license:</p>
-                <ul>
-                    <li><strong>Account Authentication:</strong> Your email and license key are stored as unique
-                        identifiers on our license server (Creem.io) to activate Pro features.</li>
-                    <li><strong>Anonymous Crash Logs:</strong> We receive basic telemetry (e.g., "Export failed on
-                        Chrome v120") to maintain app stability. These logs remain strictly anonymous.</li>
-                </ul>
-                <p><strong>Strict Negative Disclosure:</strong> We do not collect phone numbers, message content, group
-                    memberships, or browser history. Your "Vault" is yours alone.</p>
-
-                <h3>3.1 Analytics and Usage Data</h3>
-                <p>To improve product quality and user experience, WaVault uses <strong>Google Analytics 4</strong> to
-                    collect anonymous usage statistics. All analytics data is completely anonymous and cannot be linked
-                    to you personally.</p>
-
-                <h4>Data We Track:</h4>
-                <ul>
-                    <li><strong>Feature Usage:</strong> Which features you interact with (scan, export, search, tab
-                        switches)</li>
-                    <li><strong>User Properties:</strong> Account tier (free/premium), contact volume category
-                        (small/medium/large), theme preference (light/dark/system)</li>
-                    <li><strong>Session Metrics:</strong> Session duration and engagement time</li>
-                    <li><strong>Technical Context:</strong> Extension version, browser type, operating system</li>
+                    <li><strong>Highlight:</strong> Select any phone number on any CRM, portal, or website.</li>
+                    <li><strong>Right-Click:</strong> Access the "Chat on WhatsApp" instant menu.</li>
+                    <li><strong>Connect:</strong> Launch a conversation immediately without saving the contact.</li>
                 </ul>
 
-                <h4>What We Explicitly Do NOT Track:</h4>
+                <h3>The Direct Messenger</h3>
+                <p>Designed for rapid-fire communication when you already have the lead data.</p>
                 <ul>
-                    <li>Contact names, phone numbers, or WhatsApp messages</li>
-                    <li>Your IP address or precise geolocation</li>
-                    <li>Any personally identifiable information (PII)</li>
-                    <li>Your browsing history outside of WaVault</li>
-                </ul>
-
-                <h4>Your Privacy Controls:</h4>
-                <p>Analytics collection is <strong>enabled by default</strong> (opt-out model) to help us improve the
-                    product, but you have full control:</p>
-                <ol>
-                    <li>Open WaVault side panel</li>
-                    <li>Click the menu (three dots) in the top right</li>
-                    <li>Toggle <strong>"Share Usage Data"</strong> to OFF</li>
-                </ol>
-                <p>When disabled, no analytics events are sent. Your preference is saved locally and persists across
-                    browser sessions. Disabling analytics does not affect any core functionality.</p>
-
-                <h4>Third-Party Data Processor:</h4>
-                <ul>
-                    <li><strong>Service:</strong> Google Analytics 4 (Google LLC)</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy"
-                            style="color: var(--primary); text-decoration: underline;">https://policies.google.com/privacy</a>
+                    <li><strong>Interface:</strong> Tap the chat icon in the <strong>top-right</strong> of your WaVault
+                        header.</li>
+                    <li><strong>Frictionless:</strong> Paste any international number and strike while the lead is hot.
                     </li>
-                    <li><strong>Data Retention:</strong> 14 months (Google's default setting)</li>
-                    <li><strong>Legal Basis (GDPR):</strong> Legitimate interest (Article 6(1)(f)) - Product improvement
-                        and service optimization</li>
                 </ul>
             </section>
 
-            <section id="permissions">
-                <h2>4. Chrome API Permissions</h2>
-                <p>To operate locally, WaVault requires explicit access to certain browser primitives:</p>
-                <ul>
-                    <li><code>storage</code>: To save your processed leads to your machine's disk.</li>
-                    <li><code>sidePanel</code>: To provide the user interface alongside your communication window.</li>
-                    <li><code>offscreen</code>: Required to run the Rust/WASM processing core without slowing down your
-                        computer.</li>
-                    <li><code>host_permissions</code>: Restricted only to <code>web.whatsapp.com</code> to allow the
-                        local extraction bridge to function.</li>
-                </ul>
-            </section>
+            <section id="intelligence">
+                <h2>2. Lead Intelligence Dashboard</h2>
+                <p>WaVault doesn't just list data; it builds your intelligence. Turn high-volume chat history into
+                    actionable business assets.</p>
 
-            <section id="third-parties">
-                <h2>5. Trusted Subprocessors</h2>
-                <p>We work with a minimal set of industry-leading partners to deliver the service:</p>
+                <h3>Hyper-Sync Discovery</h3>
+                <p>Structure months of conversation data into a clean, searchable dashboard in seconds.</p>
                 <ul>
-                    <li><strong>Chrome Web Store:</strong> Handles the secure delivery of extension code and updates.
+                    <li><strong>Auto-Classification:</strong> Automatically distinguish between <span
+                            class="highlight">Business API</span> accounts and private users.</li>
+                    <li><strong>Unsaved Discovery:</strong> Find all the "external" numbers hidden in your chats and
+                        groups that aren't in your official contacts yet.</li>
+                </ul>
+
+                <div class="pro-tip">
+                    <strong>Dashboard Analytics</strong>
+                    The Hero Stats at the top of your dashboard track your conversion pipeline. Monitor unsaved leads
+                    versus saved customers to measure your growth.
+                </div>
+
+                <h3>WhatsApp Label Sync</h3>
+                <p>For Business users, WaVault seamlessly pulls your existing WhatsApp Labels. Filter contacts by "New
+                    Customer," "Pending Payment," or your own custom tags.</p>
+                <ul>
+                    <li><strong>Direct Integration:</strong> Every label created on your mobile app or WhatsApp Web is
+                        available in the dashboard.</li>
+                    <li><strong>Single-Click Filter:</strong> Isolate entire segments of your sales funnel instantly.
                     </li>
-                    <li><strong>Creem (creem.io):</strong> Acts as our Merchant of Record. They handle all financial
-                        transactions using PCI-compliant systems. We do not store credit card numbers.</li>
-                    <li><strong>Google Analytics 4 (Google LLC):</strong> Processes anonymous usage analytics to help us
-                        improve the product. You can opt out at any time via the in-app toggle (see Section 3.1).</li>
                 </ul>
             </section>
 
-            <section id="rights">
-                <h2>6. Global Compliance (GDPR/CCPA)</h2>
-                <p>WaVault is designed with "Privacy by Design" from day zero. This gives you absolute control:</p>
+            <section id="metadata">
+                <h2>3. Metadata & Identity Extraction</h2>
+                <p>Gain insights before you even start the conversation. WaVault extracts professional markers that are
+                    usually invisible.</p>
+
+                <h3>Push-Name Capture</h3>
+                <p>WaVault retrieves the "Push Name" users have set for themselves. This is a goldmine for identifying
+                    the person behind an unsaved phone number.</p>
+
+                <h3>"About" Status Visibility</h3>
+                <p>Instantly see the "About" status (formerly 'Status') for every lead. Professionals often list their
+                    job titles, company names, or websites here.</p>
+            </section>
+
+            <section id="geography">
+                <h2>4. Global Market Targeting</h2>
+                <p>Expand your reach with built-in geographic classification. Perfect for running localized marketing
+                    campaigns or sorting by time-zone.</p>
+
+                <h3>Regional View Navigation</h3>
+                <p>Manage thousands of contacts across different countries with ease.</p>
                 <ul>
-                    <li><strong>Right to Erasure:</strong> Because the data is local, you can exercise this right at any
-                        time by simply uninstalling the extension or clearing your browser cache. This permanently
-                        purges your vault.</li>
-                    <li><strong>Data Portability:</strong> You can export your data to CSV format at any time using the
-                        built-in "Export" functions.</li>
+                    <li><strong>Visual Aids:</strong> Instant flag recognition for over 200 countries.</li>
+                    <li><strong>Smart Sorting:</strong> Group your leads by country code to prioritize your focal
+                        regions.</li>
+                </ul>
+
+                <h3>Group Extraction Plus</h3>
+                <p>Extract every participant from your professional networking groups with a single click. Every member
+                    becomes a structured lead in your vault.</p>
+            </section>
+
+            <section id="selection">
+                <h2>5. Selection Flow & Search</h2>
+                <p>Built for the power user who handles hundreds of leads daily. Our selection engine is optimized for
+                    high-speed, bulk workflows.</p>
+
+                <h3>High-Speed Controls</h3>
+                <ul>
+                    <li><strong>Avatar Tapping:</strong> Click any profile picture to select—no precision hunting for
+                        small boxes.</li>
+                    <li><strong>Global Search:</strong> Search by Name, Phone, or even their personal Metadata
+                        instantly.</li>
                 </ul>
             </section>
 
-            <section id="security">
-                <h2>7. Technical Security Standard</h2>
-                <p>We protect your local vault using the same standards used by top-tier financial institutions. All
-                    data stored in the browser's local storage is protected by <strong>AES-256 encryption at
-                        rest</strong>, utilizing the operating system's native secure keychain provided by the browser.
+            <section id="exports">
+                <h2>6. CRM Export Vault</h2>
+                <p>Your data is only valuable if it's portable. Export your refined lead lists into standard
+                    professional formats for your CRM.</p>
+
+                <h3>Unlimited Professional Formats</h3>
+                <ul>
+                    <li><strong>Excel (.xlsx):</strong> Formatted with headers and column-autofilters for Salesforce or
+                        HubSpot.</li>
+                    <li><strong>CSV:</strong> The universal format for bulk automation and mass-uploaders.</li>
+                    <li><strong>VCard (.vcf):</strong> Sync your browser-discovered leads to your mobile device in one
+                        tap.</li>
+                </ul>
+            </section>
+
+            <section id="panel">
+                <h2>7. Side Panel Utility</h2>
+                <p>WaVault lives in the Chrome Side Panel, keeping your workflow unified and your screen clutter-free.
                 </p>
-                <p>If you have any questions regarding these technical safeguards, please reach out to our engineering
-                    team.</p>
+
+                <h3>Side-by-Side Efficiency</h3>
+                <p>Perform deep research on a website while keeping your contact list open. No more toggling between
+                    tabs.</p>
+                <ul>
+                    <li><strong>Always Available:</strong> Launch WaVault from the extensions bar and it docks
+                        comfortably to the right or left.</li>
+                    <li><strong>Responsive Layout:</strong> Optimized for narrow viewports without losing data density.
+                    </li>
+                </ul>
             </section>
 
-            <section style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-                <h3>Contact Support</h3>
-                <p>For questions regarding this policy, please contact <a
-                        href="mailto:houseof2studio@gmail.com">houseof2studio@gmail.com</a>.</p>
+            <section id="pricing">
+                <h2>8. Transparent Pricing</h2>
+                <p>Choose the plan that fits your workflow. Simple, transparent, and secure.</p>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <!-- Day Pass -->
+                    <div
+                        style="background: white; border: 1px solid var(--border); border-radius: 20px; padding: 2rem; position: relative;">
+                        <h3 style="margin-top: 0; font-size: 1.25rem;">Day Pass</h3>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin: 1rem 0;">
+                            $1.99 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/24h</span>
+                        </div>
+                        <p style="font-size: 0.9375rem;">Perfect for one-time bulk exports or quick focused projects.
+                        </p>
+                        <ul style="font-size: 0.9375rem; margin-top: 1.5rem;">
+                            <li>24-hour full access</li>
+                            <li>Unlimited exports</li>
+                            <li>No auto-renewal</li>
+                        </ul>
+                    </div>
+
+                    <!-- Monthly Subscription -->
+                    <div
+                        style="background: white; border: 2px solid var(--primary); border-radius: 20px; padding: 2rem; position: relative; box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);">
+                        <div
+                            style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">
+                            Most Popular
+                        </div>
+                        <h3 style="margin-top: 0; font-size: 1.25rem; color: var(--primary);">Monthly Pro</h3>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin: 1rem 0;">
+                            $5.99 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/mo</span>
+                        </div>
+                        <p style="font-size: 0.9375rem;">For ongoing consistent lead generation and management.</p>
+                        <ul style="font-size: 0.9375rem; margin-top: 1.5rem;">
+                            <li>Full unlimited access</li>
+                            <li>Priority Support</li>
+                            <li>Cancel anytime</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="privacy">
+                <h2>9. Security & Stealth Protocol</h2>
+                <p>We respect your professional privacy. WaVault is designed so that your client data stays exactly
+                    where it should: on your machine.</p>
+
+                <h3>Zen Mode (Stealth)</h3>
+                <p>Share your screen or record demos without leaking sensitive client information.</p>
+                <ul>
+                    <li><strong>Windows Shortcut:</strong> <kbd class="kbd">Alt</kbd> + <kbd class="kbd">Shift</kbd> +
+                        <kbd class="kbd">P</kbd>
+                    </li>
+                    <li><strong>Mac Shortcut:</strong> <kbd class="kbd">Opt</kbd> + <kbd class="kbd">Shift</kbd> + <kbd
+                            class="kbd">P</kbd></li>
+                    <li><strong>Automatic Masking:</strong> All names, phone numbers, and profile images are blurred in
+                        real-time.</li>
+                </ul>
+
+                <div class="pro-tip">
+                    <strong>Privacy Standard</strong>
+                    100% of lead extraction happens in your browser's local memory. No contact data ever touches our
+                    servers. Your vault is private by design.
+                </div>
             </section>
         </main>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 WaVault. All rights reserved. Locally processed in your browser.</p>
+        <p>&copy; 2026 WaVault. All rights reserved. Locally processed in your browser.</p>
+        <div
+            style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            WaVault is an independent project and is not affiliated with, endorsed by, or sponsored by WhatsApp Inc. or
+            Meta Platforms, Inc.
+        </div>
+        <div style="font-size: 0.875rem; color: var(--text-main); margin-top: 1.5rem; font-weight: 500;">
+            Support: <a href="mailto:houseof2studio@gmail.com"
+                style="color: var(--primary); text-decoration: none;">houseof2studio@gmail.com</a>
+        </div>
+        <div class="footer-links" style="margin-top: 2rem;">
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="refund.html" class="footer-link">Refund Policy</a>
+            <a href="https://hitesh239.github.io/wavault-docs/" target="_blank" class="footer-link">Documentation</a>
+        </div>
     </footer>
+
+    <script>
+        // TOC Active Link Script
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

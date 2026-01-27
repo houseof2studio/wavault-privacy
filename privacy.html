@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — WaVault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --surface: #FFFFFF;
+            --text-main: #1C1C1A;
+            --text-muted: #52524E;
+            --primary: #6366F1;
+            --primary-bg: rgba(99, 102, 241, 0.08);
+            --border: #E7EDEF;
+            --success: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.08);
+
+            --max-width: 1100px;
+            --content-width: 680px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 249, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Layout --- */
+        .wrapper {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 4rem;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toc-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        /* --- Main Content --- */
+        main {
+            max-width: var(--content-width);
+        }
+
+        header {
+            margin-bottom: 3.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background-color: var(--success-bg);
+            color: var(--success);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .philosophy-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        .philosophy-card h2 {
+            font-size: 1.125rem;
+            color: var(--success);
+            border: none;
+            margin: 0 0 0.75rem 0;
+            padding: 0;
+            font-weight: 700;
+        }
+
+        .philosophy-card p {
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        /* --- Typography --- */
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 4rem 0 1.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 1.0625rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        li::marker {
+            color: var(--primary);
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        code {
+            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+            font-size: 0.85em;
+            background: rgba(99, 102, 241, 0.06);
+            color: var(--primary);
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+        }
+
+        .highlight {
+            color: var(--text-main);
+            background: linear-gradient(120deg, var(--success-bg) 0%, var(--success-bg) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+            font-weight: 600;
+        }
+
+        /* --- Global Footer --- */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .site-footer p {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+                padding-top: 2rem;
+            }
+
+            aside {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media print {
+
+            nav,
+            aside,
+            .site-footer {
+                display: none;
+            }
+
+            .wrapper {
+                display: block;
+                padding: 0;
+            }
+
+            body {
+                background: white;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="icon.svg" alt="WaVault Logo" style="width: 28px; height: 28px; border-radius: 6px;">
+                WaVault
+            </a>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted)">Protocol 1.0</div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <aside>
+            <div class="toc-title">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#intro" class="toc-link">Introduction</a></li>
+                <li><a href="#architecture" class="toc-link">Architecture</a></li>
+                <li><a href="#collection" class="toc-link">Data Collection</a></li>
+                <li><a href="#permissions" class="toc-link">Permissions</a></li>
+                <li><a href="#third-parties" class="toc-link">Third Parties</a></li>
+                <li><a href="#rights" class="toc-link">User Rights</a></li>
+                <li><a href="#security" class="toc-link">Security Standard</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <header>
+                <div class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Zero-Knowledge Protocol
+                </div>
+                <h1>Privacy Policy</h1>
+                <div class="meta">
+                    <div>Updated: January 21, 2026</div>
+                    <div>Version: 1.0.8</div>
+                </div>
+            </header>
+
+            <div class="philosophy-card">
+                <h2>The Privacy Promise</h2>
+                <p>We adhere to a strict Zero-Knowledge architecture. This means WaVault is engineered so that we
+                    technically <strong>cannot access your data</strong>, even if we were compelled to do so by a third
+                    party.</p>
+            </div>
+
+            <section id="intro">
+                <h2>1. Introduction and Scope</h2>
+                <p>WaVault ("The Extension") is a professional browser utility designed to help users structure and
+                    organize their locally available communication data. This policy defines the mathematical and
+                    technical boundaries that protect your information.</p>
+            </section>
+
+            <section id="architecture">
+                <h2>2. Zero-Knowledge Architecture</h2>
+                <p>Unlike traditional cloud-based software that uploads "blobs" of user data to a central server,
+                    WaVault operates entirely within your browser's <strong>Local Runtime Environment</strong>.</p>
+                <ul>
+                    <li><strong>Memory-Only Extraction:</strong> Data derived from the WhatsApp Web interface is
+                        processed in high-speed runtime memory (RAM) using a compiled Rust worker.</li>
+                    <li><strong>Isolated Storage:</strong> Your data stays in the <code>chrome.storage.local</code>
+                        area. We have no backend API that periodically "phones home" with your contact lists.</li>
+                    <li><strong>WASM Sandbox:</strong> All logic is executed in a WebAssembly sandbox, heavily
+                        restricted from making unauthorized network requests.</li>
+                </ul>
+            </section>
+
+            <section id="collection">
+                <h2>3. Data Collection</h2>
+                <p>We follow the principle of <span class="highlight">Data Minimization</span>. We only collect what is
+                    strictly necessary to maintain your license:</p>
+                <ul>
+                    <li><strong>Account Authentication:</strong> Your email and license key are stored as unique
+                        identifiers on our license server (Creem.io) to activate Pro features.</li>
+                    <li><strong>Anonymous Crash Logs:</strong> We receive basic telemetry (e.g., "Export failed on
+                        Chrome v120") to maintain app stability. These logs remain strictly anonymous.</li>
+                </ul>
+                <p><strong>Strict Negative Disclosure:</strong> We do not collect phone numbers, message content, group
+                    memberships, or browser history. Your "Vault" is yours alone.</p>
+
+                <h3>3.1 Analytics and Usage Data</h3>
+                <p>To improve product quality and user experience, WaVault uses <strong>Google Analytics 4</strong> to
+                    collect anonymous usage statistics. All analytics data is completely anonymous and cannot be linked
+                    to you personally.</p>
+
+                <h4>Data We Track:</h4>
+                <ul>
+                    <li><strong>Feature Usage:</strong> Which features you interact with (scan, export, search, tab
+                        switches)</li>
+                    <li><strong>User Properties:</strong> Account tier (free/premium), contact volume category
+                        (small/medium/large), theme preference (light/dark/system)</li>
+                    <li><strong>Session Metrics:</strong> Session duration and engagement time</li>
+                    <li><strong>Technical Context:</strong> Extension version, browser type, operating system</li>
+                </ul>
+
+                <h4>What We Explicitly Do NOT Track:</h4>
+                <ul>
+                    <li>Contact names, phone numbers, or WhatsApp messages</li>
+                    <li>Your IP address or precise geolocation</li>
+                    <li>Any personally identifiable information (PII)</li>
+                    <li>Your browsing history outside of WaVault</li>
+                </ul>
+
+                <h4>Your Privacy Controls:</h4>
+                <p>Analytics collection is <strong>enabled by default</strong> (opt-out model) to help us improve the
+                    product, but you have full control:</p>
+                <ol>
+                    <li>Open WaVault side panel</li>
+                    <li>Click the menu (three dots) in the top right</li>
+                    <li>Toggle <strong>"Share Usage Data"</strong> to OFF</li>
+                </ol>
+                <p>When disabled, no analytics events are sent. Your preference is saved locally and persists across
+                    browser sessions. Disabling analytics does not affect any core functionality.</p>
+
+                <h4>Third-Party Data Processor:</h4>
+                <ul>
+                    <li><strong>Service:</strong> Google Analytics 4 (Google LLC)</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy"
+                            style="color: var(--primary); text-decoration: underline;">https://policies.google.com/privacy</a>
+                    </li>
+                    <li><strong>Data Retention:</strong> 14 months (Google's default setting)</li>
+                    <li><strong>Legal Basis (GDPR):</strong> Legitimate interest (Article 6(1)(f)) - Product improvement
+                        and service optimization</li>
+                </ul>
+            </section>
+
+            <section id="permissions">
+                <h2>4. Chrome API Permissions</h2>
+                <p>To operate locally, WaVault requires explicit access to certain browser primitives:</p>
+                <ul>
+                    <li><code>storage</code>: To save your processed leads to your machine's disk.</li>
+                    <li><code>sidePanel</code>: To provide the user interface alongside your communication window.</li>
+                    <li><code>offscreen</code>: Required to run the Rust/WASM processing core without slowing down your
+                        computer.</li>
+                    <li><code>host_permissions</code>: Restricted only to <code>web.whatsapp.com</code> to allow the
+                        local extraction bridge to function.</li>
+                </ul>
+            </section>
+
+            <section id="third-parties">
+                <h2>5. Trusted Subprocessors</h2>
+                <p>We work with a minimal set of industry-leading partners to deliver the service:</p>
+                <ul>
+                    <li><strong>Chrome Web Store:</strong> Handles the secure delivery of extension code and updates.
+                    </li>
+                    <li><strong>Creem (creem.io):</strong> Acts as our Merchant of Record. They handle all financial
+                        transactions using PCI-compliant systems. We do not store credit card numbers.</li>
+                    <li><strong>Google Analytics 4 (Google LLC):</strong> Processes anonymous usage analytics to help us
+                        improve the product. You can opt out at any time via the in-app toggle (see Section 3.1).</li>
+                </ul>
+            </section>
+
+            <section id="rights">
+                <h2>6. Global Compliance (GDPR/CCPA)</h2>
+                <p>WaVault is designed with "Privacy by Design" from day zero. This gives you absolute control:</p>
+                <ul>
+                    <li><strong>Right to Erasure:</strong> Because the data is local, you can exercise this right at any
+                        time by simply uninstalling the extension or clearing your browser cache. This permanently
+                        purges your vault.</li>
+                    <li><strong>Data Portability:</strong> You can export your data to CSV format at any time using the
+                        built-in "Export" functions.</li>
+                </ul>
+            </section>
+
+            <section id="security">
+                <h2>7. Technical Security Standard</h2>
+                <p>We protect your local vault using the same standards used by top-tier financial institutions. All
+                    data stored in the browser's local storage is protected by <strong>AES-256 encryption at
+                        rest</strong>, utilizing the operating system's native secure keychain provided by the browser.
+                </p>
+                <p>If you have any questions regarding these technical safeguards, please reach out to our engineering
+                    team.</p>
+            </section>
+
+            <section style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <h3>Contact Support</h3>
+                <p>For questions regarding this policy, please contact <a
+                        href="mailto:houseof2studio@gmail.com">houseof2studio@gmail.com</a>.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WaVault. All rights reserved. Locally processed in your browser.</p>
+        <div class="footer-links" style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem;">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="refund.html" class="footer-link">Refund Policy</a>
+        </div>
+    </footer>
+</body>
+
+</html>
