@@ -95,6 +95,7 @@
         .text-gradient {
             background: linear-gradient(135deg, var(--primary), #818CF8);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -363,15 +364,17 @@
                 <br><strong>0% Cloud Storage. 100% Local.</strong>
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
-                <a href="#pricing" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Start Free
-                    Trial</a>
+                <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                    target="_blank" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Add to Chrome
+                    - It's Free</a>
                 <a href="#features" class="btn" style="background: white; border: 1px solid var(--border);">Learn
                     More</a>
             </div>
             <!-- Mock UI Image Area -->
             <div
-                style="background: white; border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.1); height: 400px; max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                [App Interface Preview - Privacy Mode Enabled]
+                style="margin: 0 auto; max-width: 900px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.15); border: 1px solid var(--border);">
+                <img src="preview.png" alt="WaVault Interface Preview"
+                    style="width: 100%; height: auto; display: block;">
             </div>
         </div>
     </header>
@@ -436,7 +439,24 @@
                 <p style="color: var(--text-muted);">No hidden fees. Cancel anytime. Secure payments via Stripe.</p>
             </div>
 
-            <div class="pricing-grid">
+            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+                <!-- Free Tier -->
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price-amount">$0<span class="price-period">/forever</span></div>
+                    <p>Essential export tools.</p>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Saved Contacts Export</li>
+                        <li><span class="check-icon">✓</span> Basic Label Management</li>
+                        <li><span class="check-icon">✓</span> Export to CSV/Excel</li>
+                        <li><span class="check-icon">✓</span> Local Data Privacy</li>
+                    </ul>
+                    <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                        target="_blank" class="btn" style="width: 100%; border: 1px solid var(--border);">Install
+                        Free</a>
+                </div>
+
                 <!-- Day Pass -->
                 <div class="price-card">
                     <h3>Day Pass</h3>
@@ -444,11 +464,13 @@
                     <p>For quick one-off projects.</p>
                     <ul class="check-list">
                         <li><span class="check-icon">✓</span> 24-hours Full Access</li>
-                        <li><span class="check-icon">✓</span> Unlimited Exports</li>
+                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Unsaved Export</li>
                         <li><span class="check-icon">✓</span> No Account Required</li>
                         <li><span class="check-icon">✓</span> No Auto-Renewal</li>
                     </ul>
-                    <a href="#" class="btn" style="width: 100%; border: 1px solid var(--border);">Get Started</a>
+                    <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                        target="_blank" class="btn" style="width: 100%; border: 1px solid var(--border);">Get Day
+                        Pass</a>
                 </div>
 
                 <!-- Monthly Pro -->
@@ -460,12 +482,13 @@
                     <div class="price-amount">$5.99<span class="price-period">/mo</span></div>
                     <p>For professional sales teams.</p>
                     <ul class="check-list">
-                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Exports & Access</li>
+                        <li><span class="check-icon">✓</span> <strong>Unlimited</strong> Everything</li>
                         <li><span class="check-icon">✓</span> Priority Email Support</li>
                         <li><span class="check-icon">✓</span> Advanced Filtering</li>
                         <li><span class="check-icon">✓</span> 3-Day Money-Back Guarantee</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
+                    <a href="https://chromewebstore.google.com/detail/wa-contacts-extractor-wav/dembjmabcapfkbnbbcphbfcjoghlkcoi"
+                        target="_blank" class="btn btn-primary" style="width: 100%;">Start Pro Trial</a>
                 </div>
             </div>
         </div>
