@@ -376,8 +376,8 @@
                 </div>
                 <h1>Privacy Policy</h1>
                 <div class="meta">
-                    <div>Updated: January 21, 2026</div>
-                    <div>Version: 1.0.8</div>
+                    <div>Updated: January 31, 2026</div>
+                    <div>Version: 1.0.10</div>
                 </div>
             </header>
 
@@ -415,15 +415,23 @@
                 <p>We follow the principle of <span class="highlight">Data Minimization</span>. We only collect what is
                     strictly necessary to maintain your license:</p>
                 <ul>
-                    <li><strong>Account Authentication:</strong> Your email and license key are stored as unique
-                        identifiers on our license server (Creem.io) to activate Pro features.</li>
+                    <li><strong>Account Authentication:</strong> Your <strong>WhatsApp Phone Number</strong> and <strong>Email Address</strong> are stored as unique identifiers on our license server to activate and verify your Pro license.</li>
                     <li><strong>Anonymous Crash Logs:</strong> We receive basic telemetry (e.g., "Export failed on
                         Chrome v120") to maintain app stability. These logs remain strictly anonymous.</li>
                 </ul>
-                <p><strong>Strict Negative Disclosure:</strong> We do not collect phone numbers, message content, group
-                    memberships, or browser history. Your "Vault" is yours alone.</p>
 
-                <h3>3.1 Analytics and Usage Data</h3>
+                <h3>3.1 Payment & License Data</h3>
+                <p>When you purchase a paid plan, we collect:</p>
+                <ul>
+                    <li><strong>Phone Number:</strong> Your WhatsApp phone number (entered during checkout) is used to tie your license to your account.</li>
+                    <li><strong>Email Address:</strong> Collected during checkout (via Creem) for sending receipts and license keys.</li>
+                    <li><strong>Transaction Metadata:</strong> Order ID, amount paid, currency, and customer country (processed by Creem).</li>
+                </ul>
+                <p><strong>Storage:</strong> This data is stored securely in our license database (Supabase) and retained for the duration of your license plus 7 years for tax compliance.</p>
+
+                <p><strong>Strict Negative Disclosure:</strong> We do NOT collect your <strong>contacts'</strong> phone numbers, message content, group memberships, or browser history. We only collect <strong>YOUR</strong> phone number for licensing.</p>
+
+                <h3>3.2 Analytics and Usage Data</h3>
                 <p>To improve product quality and user experience, WaVault uses <strong>Google Analytics 4</strong> to
                     collect anonymous usage statistics. All analytics data is completely anonymous and cannot be linked
                     to you personally.</p>
@@ -440,7 +448,7 @@
 
                 <h4>What We Explicitly Do NOT Track:</h4>
                 <ul>
-                    <li>Contact names, phone numbers, or WhatsApp messages</li>
+                    <li>Contact names or phone numbers from your WhatsApp lists</li>
                     <li>Your IP address or precise geolocation</li>
                     <li>Any personally identifiable information (PII)</li>
                     <li>Your browsing history outside of WaVault</li>
@@ -477,8 +485,9 @@
                 <ul>
                     <li><strong>Chrome Web Store:</strong> Handles the secure delivery of extension code and updates.
                     </li>
-                    <li><strong>Creem (creem.io):</strong> Acts as our Merchant of Record. They handle all financial
-                        transactions using PCI-compliant systems. We do not store credit card numbers.</li>
+                    <li><strong>Creem (creem.io):</strong> Acts as our Merchant of Record. They collect your email,
+                        billing address, and payment details to process transactions. We receive transaction metadata and
+                        your email to activate licenses. We do NOT see or store your credit card numbers.</li>
                     <li><strong>Google Analytics 4 (Google LLC):</strong> Processes anonymous usage analytics. You can
                         opt out at any time.</li>
                 </ul>
